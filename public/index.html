@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PharmaPuglia OpenCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">+</span>
+        <div>
+          <strong>PharmaPuglia OpenCare</strong>
+          <small>Salute e Territorio · Regione Puglia</small>
+        </div>
+      </div>
+
+      <nav class="nav-tabs" aria-label="Sezioni principali">
+        <button class="nav-tab is-active" data-tab="search" type="button">Cerca &amp; Mappa</button>
+        <button class="nav-tab" data-tab="reports" type="button">Segnalazioni</button>
+        <button class="nav-tab is-hidden" id="nav-tab-admin" data-tab="admin" type="button">Area Admin</button>
+      </nav>
+
+      <div class="user-bar" id="user-bar">
+        <span class="badge badge-neutral" id="user-status-badge">Ospite</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <div id="global-feedback" class="feedback-banner is-hidden" role="status" aria-live="polite"></div>
+
+    <!-- Vista 1: Ricerca farmaci, equivalenti, ASL e Mappa (branch: feat/search-map-ui) -->
+    <section id="tab-search" class="tab-panel">
+      <div class="card">
+        <h1>Ricerca Farmaci, Equivalenti e Presidi Pugliesi</h1>
+        <p class="text-muted">Sezione in sviluppo sul branch <code>feat/search-map-ui</code>.</p>
+      </div>
+    </section>
+
+    <!-- Vista 2: Autenticazione e CRUD Segnalazioni (branch: feat/auth-and-reports) -->
+    <section id="tab-reports" class="tab-panel is-hidden">
+      <div class="card">
+        <h1>Segnalazioni Cittadine e Accesso</h1>
+        <p class="text-muted">Sezione in sviluppo sul branch <code>feat/auth-and-reports</code>.</p>
+      </div>
+    </section>
+
+    <!-- Vista 3: Dashboard Admin Upload & Moderazione (branch: feat/data-ingestion-admin) -->
+    <section id="tab-admin" class="tab-panel is-hidden">
+      <div class="card">
+        <h1>Area Admin — Ingestione Dataset e Moderazione</h1>
+        <p class="text-muted">Sezione in sviluppo sul branch <code>feat/data-ingestion-admin</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/search-map.js"></script>
+  <script src="/js/reports-auth.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
