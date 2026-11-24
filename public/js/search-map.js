@@ -188,6 +188,9 @@
               <strong>${Number(d.pharmacies_count) || 0} presidi</strong>
             </div>
           </div>
+          <p class="small-meta text-muted">
+            Distretto e codice possono non essere ufficiali per tutti i Comuni: conferma con la tua ASL.
+          </p>
           <div class="input-row">
             <button
               type="button"
@@ -352,7 +355,9 @@
     }
 
     const shown = medicines.length < total ? `Primi ${medicines.length} di ${total} medicinali` : `${total} medicinali`;
-    summaryEl.textContent = query ? `${shown} per "${query}".` : `${shown}.`;
+    summaryEl.textContent = query
+      ? `${shown} per "${query}".`
+      : `${shown} dalle liste di trasparenza AIFA.`;
 
     gridEl.innerHTML = medicines
       .map((med) => {

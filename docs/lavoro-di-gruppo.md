@@ -66,15 +66,16 @@ Verrà utilizzato come fonte diretta per compilare le sezioni **7 (Sviluppo con 
 ---
 
 ### Dibenedetto Jennifer (`jenniferdibenedetto`)
-- **Branch principali:** `feat/search-map-ui`
+- **Branch principali:** `feat/search-map-ui`, `fix/ui-and-docs-jennifer`
 - **Attività svolte:**
-  - Implementazione degli endpoint REST in `src/routes/search.routes.js` con query SQLite parametrizzate (`?`) e dataset pugliese di riferimento auto-inizializzato (`ensureReferenceData`):
-    - `GET /api/medicines`: ricerca farmaci AIFA per nome commerciale, principio attivo, codice AIC/ATC o titolare, con calcolo automatico dei farmaci equivalenti (stesso principio attivo ordinati per `price ASC`) e del risparmio potenziale.
+  - Implementazione degli endpoint REST in `src/routes/search.routes.js` con query SQLite parametrizzate (`?`) alimentati dai dataset caricati tramite `npm run seed` o upload Admin (con ricerca insensibile ad accenti e apostrofi via funzione SQL `fold` e conteggio totale dei risultati introdotti in PR #8):
+    - `GET /api/medicines`: ricerca farmaci AIFA per nome commerciale, principio attivo, codice AIC/ATC o titolare, con calcolo automatico dei farmaci equivalenti (stesso principio attivo ordinati per `price ASC`, con prezzi assenti in fondo) e del risparmio potenziale.
     - `GET /api/districts`: inquadramento territoriale Comune → ASL e Distretto Socio-Sanitario della Regione Puglia con conteggio dei presidi afferenti.
     - `GET /api/pharmacies`: ricerca farmacie e parafarmacie con join sui distretti ASL, calcolo distanza geodetica (formula di Haversine), filtro per raggio in km e ordinamento per vicinanza.
     - `GET /api/geocode`: geocoding indirizzi e Comuni tramite OpenStreetMap Nominatim (`NOMINATIM_USER_AGENT`) con fallback locale sui Comuni e presidi pugliesi.
-  - Progettazione e sviluppo della UI nella vista `Cerca & Mappa` (`public/index.html`, `public/css/style.css`) e della logica frontend (`public/js/search-map.js`) con mappa interattiva Leaflet, marker differenziati per farmacie/parafarmacie, cerchio del raggio di ricerca, geolocalizzazione GPS e link alle indicazioni stradali.
+  - Progettazione e sviluppo della UI nella vista `Cerca & Mappa` (`public/index.html`, `public/css/style.css`) e della logica frontend (`public/js/search-map.js`) con mappa interattiva Leaflet (`preferCanvas`), marker differenziati per farmacie/parafarmacie, cerchio del raggio di ricerca, geolocalizzazione GPS e link alle indicazioni stradali.
+  - Verifica e rifinitura pre-consegna (`fix/ui-and-docs-jennifer`): verifica end-to-end dei flussi (seed da 8.598 farmaci / 1.936 presidi / 257 distretti, segnalazioni, moderazione admin, upload CSV, mappa e GPS), allineamento delle etichette UI alle liste di trasparenza AIFA e ai dati distrettuali disponibili, sostituzione degli esempi di ricerca con farmaci presenti nel dataset e disattivazione visiva del filtro "Senza ricetta" finché mancano i relativi dati.
 - **Coding agent, modelli, approccio e skill usati:**
   - **Agent & Modello:** Antigravity (Gemini)
-  - **Approccio:** Plan Mode (`/plan`) con analisi preliminare di `decisioni.md` e `AGENTS.md`, piano di implementazione strutturato, sviluppo modulare nel perimetro del branch `feat/search-map-ui` e verifica automatica degli endpoint API e dell'interfaccia.
+  - **Approccio:** Plan Mode (`/plan`) con analisi preliminare di `decisioni.md` e `AGENTS.md`, piano di implementazione strutturato, sviluppo modulare nel perimetro del branch `feat/search-map-ui` e verifica automatica/browser su `fix/ui-and-docs-jennifer`.
   - **Skill usate:** Nessuna skill esterna aggiuntiva (utilizzo diretto delle linee guida e regole di repository definite in `AGENTS.md` e `decisioni.md`).

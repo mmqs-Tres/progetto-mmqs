@@ -42,10 +42,10 @@
       <div class="card hero-card">
         <div class="hero-header">
           <div>
-            <span class="badge badge-accent">Servizio Sanitario Regionale · Open Data Puglia</span>
+            <span class="badge badge-accent">Servizio Sanitario Regionale · Puglia</span>
             <h1 class="hero-title">Ricerca Farmaci Equivalenti AIFA, Distretti ASL e Presidi Farmaceutici</h1>
             <p class="text-muted hero-subtitle">
-              Consulta il prontuario AIFA per confrontare i medicinali generici a minor costo, individua la tua ASL e il Distretto Socio-Sanitario per Comune e calcola il percorso verso le farmacie più vicine.
+              Consulta le liste di trasparenza AIFA per confrontare i medicinali generici a minor costo, individua la tua ASL e il Distretto Socio-Sanitario per Comune e calcola il percorso verso le farmacie più vicine.
             </p>
           </div>
           <div class="kpi-strip" aria-label="Riepilogo dati caricati">
@@ -71,7 +71,7 @@
         <article class="card" aria-labelledby="heading-district">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Open Data Regione Puglia</span>
+              <span class="section-kicker">Suddivisione territoriale · verifica con la tua ASL</span>
               <h2 id="heading-district">Inquadramento Comune → ASL e Distretto</h2>
             </div>
           </div>
@@ -108,7 +108,7 @@
         <article class="card" aria-labelledby="heading-medicines">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Prontuario Ufficiale AIFA</span>
+              <span class="section-kicker">Liste di trasparenza AIFA</span>
               <h2 id="heading-medicines">Ricerca Farmaci e Equivalenti Generici</h2>
             </div>
           </div>
@@ -124,7 +124,7 @@
                   id="medicine-query-input"
                   class="form-control"
                   type="search"
-                  placeholder="Es. Tachipirina, Paracetamolo, Moment, Ibuprofene, Augmentin..."
+                  placeholder="Es. Pantoprazolo, Brufen, Ibuprofene, Augmentin, Omeprazolo..."
                   autocomplete="off"
                 />
                 <button type="submit" class="btn btn-primary">Cerca farmaco</button>
@@ -140,11 +140,11 @@
                   <option value="0">Solo Farmaci Brand</option>
                 </select>
               </div>
-              <div class="form-group">
+              <div class="form-group is-hidden" id="medicine-prescription-filter-group">
                 <label class="form-label" for="medicine-prescription-filter">Regime di dispensazione</label>
                 <select id="medicine-prescription-filter" class="form-control">
                   <option value="">Tutti i regimi</option>
-                  <option value="0">Senza ricetta (SOP / OTC)</option>
+                  <option value="0" disabled hidden>Senza ricetta (SOP / OTC)</option>
                   <option value="1">Con ricetta medica (RR)</option>
                 </select>
               </div>
@@ -154,7 +154,7 @@
           <div class="quick-chips" aria-label="Ricerche frequenti farmaci">
             <span class="chips-label">Esempi AIFA:</span>
             <button type="button" class="chip-btn" data-quick-medicine="Paracetamolo">Paracetamolo</button>
-            <button type="button" class="chip-btn" data-quick-medicine="Tachipirina">Tachipirina</button>
+            <button type="button" class="chip-btn" data-quick-medicine="Brufen">Brufen</button>
             <button type="button" class="chip-btn" data-quick-medicine="Ibuprofene">Ibuprofene</button>
             <button type="button" class="chip-btn" data-quick-medicine="Augmentin">Augmentin</button>
             <button type="button" class="chip-btn" data-quick-medicine="Omeprazolo">Omeprazolo</button>
@@ -169,7 +169,7 @@
           <div>
             <h2 id="heading-medicines-results" class="section-subtitle">Schede Farmaci e Comparazione Equivalenti AIFA</h2>
             <p id="medicine-results-summary" class="text-muted small-meta" aria-live="polite">
-              Caricamento prontuario farmaci in corso...
+              Caricamento liste di trasparenza AIFA in corso...
             </p>
             <p class="text-muted small-meta">
               Il confronto usa solo il principio attivo: dosaggio, forma e confezione possono essere diversi. Chiedi sempre al medico o al farmacista.
