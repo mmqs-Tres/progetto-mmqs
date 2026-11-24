@@ -229,9 +229,9 @@ Il dettaglio delle attività è in [`docs/lavoro-di-gruppo.md`](docs/lavoro-di-g
 
 **Dati**
 
-- **Distretti:** non provengono da un dataset ufficiale. Per 109 comuni su 257 il nome e il codice del distretto sono generati automaticamente e possono essere errati, anche se l'interfaccia riporta "Open Data Regione Puglia".
-- **Ricetta:** tutti i farmaci risultano con obbligo di ricetta, perché la lista usata non contiene questa informazione. Il filtro "Senza ricetta" non trova quindi risultati.
-- **Farmaci:** sono presenti solo quelli delle liste di trasparenza AIFA. Alcuni esempi dell'interfaccia, come "Tachipirina", non danno risultati.
+- **Distretti:** non provengono da un dataset ufficiale. Per 109 comuni su 257 il nome e il codice del distretto sono generati automaticamente e possono essere errati (l'interfaccia invita a verificare con la propria ASL).
+- **Ricetta:** tutti i farmaci risultano con obbligo di ricetta, perché la lista usata non contiene questa informazione. Il filtro "Senza ricetta" è nascosto nell'interfaccia finché mancano questi dati.
+- **Farmaci:** sono presenti solo quelli delle liste di trasparenza AIFA (fascia A/equivalenti). Farmaci da banco non inclusi nelle liste (come "Tachipirina" o "Moment") non danno risultati.
 - **Equivalenti:** il confronto usa solo il principio attivo; dosaggio, forma e confezione possono essere diversi.
 - **Codici AIC:** hanno 8 cifre invece di 9, probabilmente per la perdita dello zero iniziale.
 - **Posizioni:** 59 presidi su 1.852 con coordinate risultano a oltre 20 km dal centro del proprio comune; altri 84 non hanno coordinate e non compaiono sulla mappa.
