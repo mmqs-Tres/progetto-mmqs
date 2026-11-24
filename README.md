@@ -192,6 +192,7 @@ Sono 49 test su autenticazione, permessi, segnalazioni, ricerca, seed, upload e 
 | Marco (`DarkFury17`) | `feat/data-ingestion-admin` (PR #7) | Antigravity | Gemini 3.8 Flash | Analisi dei dati ministeriali e AIFA, planning in step e sviluppo guidato da test (`node:test`, `supertest`) |
 | Gabriele (`Fariguu`) | `fix/integration-polish` (PR #8) | Claude Code | Claude Opus 5.5 | Verifica del `main` integrato, poi correzioni con test e prove nel browser |
 | Gabriele (`Fariguu`) | `docs/readme-and-screenshots` | Claude Code | Claude Opus 5.5 | Prova completa su un clone pulito, screenshot e README |
+| Gabriele (`Fariguu`) | `docs/readme-and-screenshots` (review in `review-ux/`) | Claude Code | Claude Haiku 5.5 (orchestratore e sette subagent) | Review UX/UI in fasi: prove nell'app a 1280 e 375 px, analisi in parallelo, verifica indipendente di P0 e P1, sintesi in `review-ux/REPORT.md` |
 
 ### AGENTS.md
 
@@ -208,7 +209,7 @@ Ogni membro ha lavorato su un proprio branch, con file assegnati per evitare con
 
 | Membro | Contributo principale |
 |---|---|
-| **Gabriele** | Setup e architettura, autenticazione e ruoli, segnalazioni, integrazione finale, documentazione |
+| **Gabriele** | Setup e architettura, autenticazione e ruoli, segnalazioni, integrazione finale, documentazione, review UX/UI dell'app (`review-ux/REPORT.md`) |
 | **Jennifer** | API di ricerca, equivalenti, distretti e geocoding; interfaccia e mappa |
 | **Marco** | Preparazione dei dataset, seed, upload CSV/JSON, moderazione e dashboard admin |
 
