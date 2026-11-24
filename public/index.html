@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
@@ -171,6 +171,9 @@
             <p id="medicine-results-summary" class="text-muted small-meta" aria-live="polite">
               Caricamento prontuario farmaci in corso...
             </p>
+            <p class="text-muted small-meta">
+              Il confronto usa solo il principio attivo: dosaggio, forma e confezione possono essere diversi. Chiedi sempre al medico o al farmacista.
+            </p>
           </div>
           <button type="button" id="medicine-reset-btn" class="btn">Azzera filtri farmaci</button>
         </div>
@@ -280,21 +283,21 @@
     <!-- Vista 2: Autenticazione e CRUD Segnalazioni (branch: feat/auth-and-reports) -->
     <section id="tab-reports" class="tab-panel is-hidden">
       <div class="card">
-        <h1>Segnalazioni Cittadine e Accesso</h1>
-        <p class="text-muted">Sezione in sviluppo sul branch <code>feat/auth-and-reports</code>.</p>
+        <h1>Segnalazioni</h1>
+        <p class="text-muted">Caricamento…</p>
       </div>
     </section>
 
     <!-- Vista 3: Dashboard Admin Upload & Moderazione (branch: feat/data-ingestion-admin) -->
     <section id="tab-admin" class="tab-panel is-hidden">
       <div class="card">
-        <h1>Area Admin — Ingestione Dataset e Moderazione</h1>
-        <p class="text-muted">Sezione in sviluppo sul branch <code>feat/data-ingestion-admin</code>.</p>
+        <h1>Area Admin</h1>
+        <p class="text-muted">Caricamento…</p>
       </div>
     </section>
   </main>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="/js/api.js"></script>
   <script src="/js/search-map.js"></script>
   <script src="/js/reports-auth.js"></script>

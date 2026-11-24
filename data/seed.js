@@ -4,6 +4,15 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 const { initDatabase, closeDb } = require('../src/db/database');
 
+// Le password di prova arrivano dall'ambiente: non devono stare nel codice.
+function requiredPassword(name) {
+  const value = process.env[name] || '';
+  if (value.length < 8 || Buffer.byteLength(value, 'utf8') > 72) {
+    throw new Error(`${name} mancante o non valida: impostala nel file .env (da 8 caratteri a 72 byte).`);
+  }
+  return value;
+}
+
 /**
  * Seed script per PharmaPuglia OpenCare
  * Popola il database SQLite con:
@@ -14,6 +23,9 @@ const { initDatabase, closeDb } = require('../src/db/database');
  * - Segnalazioni di test per verificare moderazione e flusso segnalazioni
  */
 function runSeed(dbInstance) {
+  const adminPassword = requiredPassword('SEED_ADMIN_PASSWORD');
+  const cittadinoPassword = requiredPassword('SEED_CITTADINO_PASSWORD');
+
   const db = dbInstance || initDatabase();
   console.log('--- Avvio Seed Database PharmaPuglia OpenCare ---');
 
@@ -22,8 +34,8 @@ function runSeed(dbInstance) {
   // 1. Utenti di test
   console.log('1. Inserimento utenti di test...');
   const salt = bcrypt.genSaltSync(10);
-  const adminHash = bcrypt.hashSync('Admin123!', salt);
-  const cittadinoHash = bcrypt.hashSync('Cittadino123!', salt);
+  const adminHash = bcrypt.hashSync(adminPassword, salt);
+  const cittadinoHash = bcrypt.hashSync(cittadinoPassword, salt);
 
   const insertUserStmt = db.prepare(`
     INSERT INTO users (name, email, password_hash, role)
@@ -153,7 +165,7 @@ function runSeed(dbInstance) {
           active_ingredient: row.active_ingredient,
           atc_code: row.atc_code || null,
           holder: row.holder || null,
-          price: typeof row.price === 'number' ? row.price : parseFloat(row.price) || 0,
+          price: parseFloat(row.price) || null, // un prezzo assente non deve sembrare il più basso
           is_generic: row.is_generic ? 1 : 0,
           prescription_required: row.prescription_required !== undefined ? (row.prescription_required ? 1 : 0) : 1
         });
@@ -217,7 +229,12 @@ function runSeed(dbInstance) {
 }
 
 if (require.main === module) {
-  runSeed();
+  try {
+    runSeed();
+  } catch (err) {
+    console.error(`Seed interrotto: ${err.message}`);
+    process.exitCode = 1;
+  }
 }
 
 module.exports = { runSeed };

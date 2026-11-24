@@ -66,7 +66,7 @@ function parseUploadedFile(file) {
  * POST /api/admin/upload/:dataset
  * Importa o aggiorna dataset (pharmacies, medicines, districts) da CSV o JSON
  */
-router.post('/upload/:dataset', upload.single('file'), (req, res) => {
+router.post('/upload/:dataset', upload.single('file'), (req, res, next) => {
   const { dataset } = req.params;
   const validDatasets = ['pharmacies', 'medicines', 'districts'];
 
@@ -217,7 +217,7 @@ router.post('/upload/:dataset', upload.single('file'), (req, res) => {
           const active_ingredient = cleanStr(r.active_ingredient || r['Principio attivo'] || r.principio_attivo);
           const atc_code = cleanStr(r.atc_code || r.ATC || r.atc) || null;
           const holder = cleanStr(r.holder || r.Ditta || r.ditta || r.titolare) || null;
-          const price = parseNum(r.price !== undefined ? r.price : (r['Prezzo Pubblico 16 novembre 2026'] || r['Prezzo riferimento SSN']), 0.0);
+          const price = parseNum(r.price !== undefined ? r.price : (r['Prezzo Pubblico 16 novembre 2026'] || r['Prezzo riferimento SSN'])) || null;
 
           let is_generic = 0;
           if (r.is_generic !== undefined) {
@@ -259,9 +259,7 @@ router.post('/upload/:dataset', upload.single('file'), (req, res) => {
       total: inserted + updated + skipped
     });
   } catch (err) {
-    return res.status(500).json({
-      error: `Errore durante l'elaborazione del dataset: ${err.message}`
-    });
+    return next(err);
   }
 });
 
@@ -269,7 +267,7 @@ router.post('/upload/:dataset', upload.single('file'), (req, res) => {
  * GET /api/admin/reports
  * Recupera tutte le segnalazioni con filtri opzionali e dettagli utente e presidio
  */
-router.get('/reports', (req, res) => {
+router.get('/reports', (req, res, next) => {
   const { status } = req.query;
   const db = getDb();
 
@@ -314,9 +312,7 @@ router.get('/reports', (req, res) => {
     const reports = db.prepare(sql).all(...params);
     return res.status(200).json({ reports });
   } catch (err) {
-    return res.status(500).json({
-      error: `Errore nel recupero delle segnalazioni: ${err.message}`
-    });
+    return next(err);
   }
 });
 
@@ -324,7 +320,7 @@ router.get('/reports', (req, res) => {
  * PATCH /api/admin/reports/:id/status
  * Aggiorna lo stato di moderazione di una segnalazione ('approved' o 'rejected')
  */
-router.patch('/reports/:id/status', (req, res) => {
+router.patch('/reports/:id/status', (req, res, next) => {
   const { id } = req.params;
   const { status } = req.body || {};
 
@@ -373,9 +369,7 @@ router.patch('/reports/:id/status', (req, res) => {
       report: updated
     });
   } catch (err) {
-    return res.status(500).json({
-      error: `Errore nell'aggiornamento della segnalazione: ${err.message}`
-    });
+    return next(err);
   }
 });
 

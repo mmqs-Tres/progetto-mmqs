@@ -31,6 +31,7 @@ L'interfaccia deve risultare **chiara, istituzionale, accessibile e orientata al
   --bg-surface: #ffffff;
   --bg-subtle: #eef3f1;
   --border-color: #dce4e0;
+  --border-control: #7c9189;  /* Bordo dei campi (contrasto 3:1) */
 
   --text-primary: #16241f;
   --text-secondary: #4b6058;
@@ -148,9 +149,11 @@ Tutte le risposte API sono in formato JSON. In caso di errore restituiscono `{ "
 - **Date** in UTC senza indicatore di fuso (`YYYY-MM-DD HH:MM:SS`): il frontend deve convertirle.
 
 ### Ricerca, Equivalenti & Mappa (`/api/search` / `/api/...`) — `feat/search-map-ui`
-- `GET /api/medicines?q=...` — cerca per `commercial_name` o `active_ingredient`, restituendo per ogni farmaco anche i relativi `equivalents` (stesso `active_ingredient`, ordinati per `price ASC`)
-- `GET /api/pharmacies?comune=...&lat=...&lng=...&radius_km=...` — lista farmacie/parafarmacie (con `distance_km` se `lat`/`lng` presenti)
+- `GET /api/medicines?q=...` — cerca per `commercial_name` o `active_ingredient`, restituendo per ogni farmaco anche i relativi `equivalents` (stesso `active_ingredient`, ordinati per `price ASC`, senza prezzo in fondo). Restituisce al massimo 60 farmaci (`count`) e il totale trovato (`total`). Dosaggio, forma e confezione non sono confrontati: l'interfaccia lo segnala
+- `GET /api/pharmacies?comune=...&lat=...&lng=...&radius_km=...` — lista farmacie/parafarmacie (con `distance_km` se `lat`/`lng` presenti) → `{ count, pharmacies: [...] }`
 - `GET /api/districts?comune=...` — restituisce ASL e distretto socio-sanitario del comune richiesto
+- Il filtro `comune` ignora maiuscole, accenti e apostrofi (funzione SQL `fold`): nome esatto se il comune esiste, altrimenti parte del nome.
+- I dati arrivano solo da `npm run seed` o dagli upload admin: le ricerche non scrivono nel DB.
 - `GET /api/geocode?q=...` — interroga OpenStreetMap Nominatim con `NOMINATIM_USER_AGENT` e restituisce `{ lat, lng, display_name }`
 
 ### Admin (`/api/admin`) — `feat/data-ingestion-admin`
@@ -168,6 +171,8 @@ Tutte le risposte API sono in formato JSON. In caso di errore restituiscono `{ "
 - Aggiornare righe esistenti con `INSERT ... ON CONFLICT DO UPDATE`, mai `INSERT OR REPLACE`: il `REPLACE` elimina la riga e, per le chiavi esterne, azzera `pharmacy_id` nelle segnalazioni o cancella le segnalazioni dell'utente.
 - Testi inseriti dagli utenti mostrati solo con `textContent`, mai `innerHTML` (XSS).
 - Nessun segreto, token, password reale o dato personale reale nel repository.
+- Password degli utenti di prova solo in `.env` (`SEED_ADMIN_PASSWORD`, `SEED_CITTADINO_PASSWORD`): senza, il seed si ferma.
+- **CSP attiva** (`src/app.js`): niente script né attributi `style` inline nell'HTML; le risorse da CDN hanno `integrity`. Gli errori 500 vanno passati a `next(err)`, mai con `err.message` nella risposta.
 - Utenti di prova **esclusivamente inventati** (es. `cittadino@pharmapuglia.test` / `admin@pharmapuglia.test`).
 
 ---
