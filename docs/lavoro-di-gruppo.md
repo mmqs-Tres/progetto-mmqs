@@ -16,7 +16,7 @@ Verrà utilizzato come fonte diretta per compilare le sezioni **7 (Sviluppo con 
 | PR #6 | `feat/search-map-ui` | Jennifer (`jenniferdibenedetto`) | Gabriele, Marco | Mergiata | Ricerca farmaci e matching equivalenti AIFA, inquadramento Comune → ASL/Distretto, mappa Leaflet/Nominatim e UI |
 | PR #7 | `feat/data-ingestion-admin` | Marco (`DarkFury17`) | Gabriele, Jennifer | Mergiata | Dataset ufficiali Puglia, seed DB, upload CSV/JSON Admin e pannello moderazione segnalazioni |
 | PR #8 | `fix/integration-polish` | Gabriele (`Fariguu`) | Marco | Mergiata (approvata da Marco) | Integrazione finale, fix post-merge e verifica end-to-end |
-| *(da aprire)* | `docs/readme-and-screenshots` | Gabriele (`Fariguu`) | Marco, Jennifer | Pronta, PR da aprire | Screenshot finali e stesura completa del `README.md` di consegna |
+| [PR #9](https://github.com/mmqs-Tres/progetto-mmqs/pull/9) | `docs/readme-and-screenshots` | Gabriele (`Fariguu`) | Marco, Jennifer | Aperta, in attesa di review | Screenshot finali, stesura completa del `README.md` di consegna e review UX/UI in `review-ux/` |
 
 ---
 

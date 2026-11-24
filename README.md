@@ -221,6 +221,7 @@ Ogni membro ha lavorato su un proprio branch, con file assegnati per evitare con
 | [#6](https://github.com/mmqs-Tres/progetto-mmqs/pull/6) | `feat/search-map-ui` | Jennifer | Ricerca, mappa e interfaccia |
 | [#7](https://github.com/mmqs-Tres/progetto-mmqs/pull/7) | `feat/data-ingestion-admin` | Marco | Dataset, seed e Area Admin |
 | [#8](https://github.com/mmqs-Tres/progetto-mmqs/pull/8) | `fix/integration-polish` | Gabriele | Integrazione, stile e correzioni |
+| [#9](https://github.com/mmqs-Tres/progetto-mmqs/pull/9) | `docs/readme-and-screenshots` | Gabriele | README di consegna, screenshot e review UX/UI (`review-ux/`) |
 
 Il dettaglio delle attività è in [`docs/lavoro-di-gruppo.md`](docs/lavoro-di-gruppo.md).
 
