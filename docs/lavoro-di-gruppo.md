@@ -13,7 +13,7 @@ Verrà utilizzato come fonte diretta per compilare le sezioni **7 (Sviluppo con 
 |---|---|---|---|---|---|
 | PR #4 | `chore/project-setup` | Gabriele (`Fariguu`) | Marco, Jennifer | Mergiata (approvata da Jennifer) | Setup iniziale Express + SQLite, schema DB, `.gitignore`, `.env.example`, `decisioni.md`, `AGENTS.md`, shell frontend |
 | PR #2 | `feat/data-ingestion-admin` | Marco (`DarkFury17`) | Gabriele, Jennifer | In preparazione | Dataset ufficiali Puglia, seed DB, upload CSV/JSON Admin e pannello moderazione segnalazioni |
-| *(da aprire)* | `feat/auth-and-reports` | Gabriele (`Fariguu`) | Marco, Jennifer | Sviluppo completato, PR da aprire | Autenticazione RBAC (`cittadino`/`admin`), CRUD segnalazioni con interfaccia e test API |
+| PR #5 | `feat/auth-and-reports` | Gabriele (`Fariguu`) | Marco, Jennifer | Aperta / In review | Autenticazione RBAC (`cittadino`/`admin`), CRUD segnalazioni con interfaccia e test API |
 | PR #4 | `feat/search-map-ui` | Jennifer (`jenniferdibenedetto`) | Gabriele, Marco | In preparazione | Ricerca farmaci e matching equivalenti AIFA, inquadramento Comune → ASL/Distretto, mappa Leaflet/Nominatim e UI |
 | PR #5 | `fix/integration-polish` | Gruppo | Tutti | In preparazione | Integrazione finale, fix post-merge e verifica end-to-end |
 | PR #6 | `docs/readme-and-screenshots` | Gruppo | Tutti | In preparazione | Screenshot finali e stesura completa del `README.md` di consegna |
