@@ -1,13 +1,11 @@
 // public/js/admin.js
 // Dashboard Amministratore: Ingestione Dataset (CSV/JSON) e Moderazione Segnalazioni
-// Sviluppato per il branch feat/data-ingestion-admin (PR #2)
 //
 // Regole di sicurezza: i testi degli utenti passano solo da textContent, mai da innerHTML.
-// Ascolta l'evento 'pharma:auth' per aggiornamenti di sessione in tempo reale.
+// L'accesso avviene nel tab Segnalazioni: qui si ascolta solo l'evento 'pharma:auth'.
 
 (() => {
   const adminTab = document.getElementById('tab-admin');
-  const navTabAdmin = document.getElementById('nav-tab-admin');
   if (!adminTab) return;
 
   let activeUser = null;
@@ -20,132 +18,24 @@
     return node;
   }
 
-  /**
-   * Decodifica il payload JWT salvato in localStorage
-   */
-  function getCurrentUser() {
-    if (activeUser) return activeUser;
-    const token = window.PharmaAPI ? window.PharmaAPI.getToken() : localStorage.getItem('pharmapuglia_token');
-    if (!token) return null;
-    try {
-      const parts = token.split('.');
-      if (parts.length !== 3) return null;
-      const base64 = parts[1].replace(/-/g, '+').replace(/_/g, '/');
-      const jsonStr = decodeURIComponent(
-        atob(base64)
-          .split('')
-          .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
-          .join('')
-      );
-      return JSON.parse(jsonStr);
-    } catch {
-      return null;
-    }
-  }
-
-  /**
-   * Controlla la visibilità del tab admin nella navbar
-   */
-  function updateAdminNavVisibility(user) {
-    if (navTabAdmin) {
-      if (user && user.role === 'admin') {
-        navTabAdmin.classList.remove('is-hidden');
-      } else {
-        navTabAdmin.classList.add('is-hidden');
-      }
-    }
+  // SQLite salva in UTC senza indicarlo: senza la Z il browser leggerebbe un'ora locale.
+  function formatDate(value) {
+    const date = new Date(`${String(value || '').replace(' ', 'T')}Z`);
+    return Number.isNaN(date.getTime()) ? '-' : date.toLocaleString('it-IT');
   }
 
   /**
    * Render principale della dashboard admin
    */
   function renderDashboard() {
-    const user = getCurrentUser();
-    updateAdminNavVisibility(user);
+    const user = activeUser;
     adminTab.replaceChildren();
 
+    // Il tab è già nascosto da reports-auth.js; i permessi li verifica comunque il server.
     if (!user || user.role !== 'admin') {
-      const card = el('div', { className: 'card form-narrow' });
-      const title = el('h2', { textContent: 'Accesso Riservato Amministratori' });
-      const desc = el('p', {
-        className: 'text-muted',
-        textContent: 'Questa sezione è riservata al personale autorizzato per la gestione dei dataset territoriali e la moderazione delle segnalazioni dei cittadini pugliesi.'
-      });
-
-      const credBox = el('div', {
-        className: 'notice-box'
-      });
-      credBox.innerHTML = `
-        <strong>Credenziali Amministratore di Prova:</strong><br />
-        Email: <code>admin@pharmapuglia.test</code><br />
-        Password: <code>Admin123!</code>
-      `;
-
-      const form = el('form', { id: 'admin-quick-login-form', className: 'form-stack' });
-
-      const emailField = el('div', { className: 'form-group' });
-      const emailLabel = el('label', { htmlFor: 'admin-login-email', textContent: 'Email', className: 'form-label' });
-      const emailInput = el('input', {
-        id: 'admin-login-email',
-        type: 'email',
-        required: true,
-        value: 'admin@pharmapuglia.test',
-        className: 'form-control'
-      });
-      emailField.append(emailLabel, emailInput);
-
-      const passField = el('div', { className: 'form-group' });
-      const passLabel = el('label', { htmlFor: 'admin-login-password', textContent: 'Password', className: 'form-label' });
-      const passInput = el('input', {
-        id: 'admin-login-password',
-        type: 'password',
-        required: true,
-        value: 'Admin123!',
-        className: 'form-control'
-      });
-      passField.append(passLabel, passInput);
-
-      const feedback = el('div', {
-        id: 'admin-login-feedback',
-        className: 'form-error is-hidden'
-      });
-
-      const submitBtn = el('button', {
-        type: 'submit',
-        className: 'btn btn-primary',
-        textContent: 'Accedi come Admin'
-      });
-
-      form.append(emailField, passField, feedback, submitBtn);
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        feedback.classList.add('is-hidden');
-        feedback.textContent = '';
-
-        try {
-          const res = await fetch('/api/auth/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: emailInput.value.trim(), password: passInput.value })
-          });
-          const data = await res.json();
-          if (!res.ok) {
-            throw new Error(data.error || 'Errore durante il login.');
-          }
-          if (data.token) {
-            if (window.PharmaAPI) window.PharmaAPI.setToken(data.token);
-            activeUser = data.user;
-            document.dispatchEvent(new CustomEvent('pharma:auth', { detail: { user: data.user } }));
-          }
-        } catch (err) {
-          feedback.textContent = err.message;
-          feedback.classList.remove('is-hidden');
-        }
-      });
-
-      card.append(title, desc, credBox, form);
-      adminTab.append(card);
+      adminTab.append(
+        el('div', { className: 'card' }, el('h1', { textContent: 'Accesso riservato agli amministratori' }))
+      );
       return;
     }
 
@@ -161,23 +51,7 @@
     });
     headerLeft.append(headerTitle, headerDesc);
 
-    const headerRight = el('div', { className: 'user-bar' });
-    const adminBadge = el('span', {
-      className: 'badge badge-success',
-      textContent: `Admin: ${user.name || user.email}`
-    });
-    const logoutBtn = el('button', {
-      type: 'button',
-      className: 'btn btn-sm',
-      textContent: 'Esci'
-    });
-    logoutBtn.addEventListener('click', () => {
-      if (window.PharmaAPI) window.PharmaAPI.clearToken();
-      activeUser = null;
-      document.dispatchEvent(new CustomEvent('pharma:auth', { detail: { user: null } }));
-    });
-    headerRight.append(adminBadge, logoutBtn);
-    headerRow.append(headerLeft, headerRight);
+    headerRow.append(headerLeft);
 
     // SEZIONE 1: Ingestione Dataset
     const uploadCard = el('div', { className: 'card' });
@@ -380,7 +254,7 @@
 
       const tbody = el('tbody');
       for (const rep of reports) {
-        const dateFormatted = rep.created_at ? new Date(rep.created_at).toLocaleString('it-IT') : '-';
+        const dateFormatted = formatDate(rep.created_at);
         let badgeClass = 'badge-neutral';
         let badgeLabel = rep.status;
 
@@ -506,14 +380,10 @@
     renderDashboard();
   });
 
-  // Inizializzazione al caricamento del DOM
-  document.addEventListener('DOMContentLoaded', () => {
-    renderDashboard();
-
-    if (navTabAdmin) {
-      navTabAdmin.addEventListener('click', renderDashboard);
-    }
-  });
+  const navTabAdmin = document.getElementById('nav-tab-admin');
+  if (navTabAdmin) {
+    navTabAdmin.addEventListener('click', renderDashboard);
+  }
 
   // Espone metodi utili globalmente
   window.AdminPanel = {
