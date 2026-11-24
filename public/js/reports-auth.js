@@ -35,8 +35,14 @@
     return node;
   }
 
-  function field(labelText, input) {
-    return el('div', { className: 'form-field' }, el('label', { htmlFor: input.id, textContent: labelText }), ' ', input);
+  function field(labelText, input, action = null) {
+    input.classList.add('form-control');
+    return el(
+      'div',
+      { className: 'form-group' },
+      el('label', { className: 'form-label', htmlFor: input.id, textContent: labelText }),
+      action ? el('div', { className: 'input-row' }, input, action) : input
+    );
   }
 
   function button(text, className = 'btn', type = 'button') {
@@ -164,12 +170,12 @@
         : 'Ospite';
     }
     ui.sessionButton?.remove();
-    ui.sessionButton = button(currentUser ? 'Esci' : 'Accedi');
+    ui.sessionButton = button(currentUser ? 'Esci' : 'Accedi', 'btn btn-sm');
     ui.sessionButton.addEventListener('click', currentUser ? logout : () => {
       openReportsTab();
       document.getElementById('auth-email')?.focus();
     });
-    bar.append(' ', ui.sessionButton);
+    bar.append(ui.sessionButton);
   }
 
   // --- Accesso e registrazione ---
@@ -200,14 +206,14 @@
 
     const form = el(
       'form',
-      { className: 'form' },
+      { className: 'form-stack form-narrow' },
       isRegister ? field('Nome', name) : null,
       field('Email', email),
       field('Password', password),
       isRegister
-        ? el('p', { id: 'auth-password-hint', className: 'text-muted', textContent: 'Almeno 8 caratteri.' })
+        ? el('p', { id: 'auth-password-hint', className: 'text-muted small-meta', textContent: 'Almeno 8 caratteri.' })
         : null,
-      el('div', { className: 'form-actions' }, submit, ' ', toggle)
+      el('div', { className: 'form-actions' }, submit, toggle)
     );
     onSubmit(form, submit, async () => {
       const body = { email: email.value, password: password.value };
@@ -284,16 +290,12 @@
 
     const node = el(
       'fieldset',
-      {},
-      el('legend', { textContent: 'Farmacia (facoltativa)' }),
-      field('Comune', comune),
-      search,
+      { className: 'form-fieldset' },
+      el('legend', { className: 'form-label', textContent: 'Farmacia (facoltativa)' }),
+      field('Comune', comune, search),
       status,
       field('Farmacia', select)
     );
-    // I nomi lunghi delle farmacie non devono allargare la pagina su mobile.
-    node.style.minWidth = '0';
-    select.style.maxWidth = '100%';
     return { node, getValue: () => (select.value ? Number(select.value) : null) };
   }
 
@@ -320,17 +322,17 @@
 
     const form = el(
       'form',
-      { className: 'form' },
+      { className: 'form-stack form-narrow' },
       field('Categoria', category),
       field('Farmaco (facoltativo)', medicine),
       pharmacy.node,
       field('Messaggio', message),
       el('p', {
         id: 'report-message-hint',
-        className: 'text-muted',
+        className: 'text-muted small-meta',
         textContent: 'Non inserire dati personali o sanitari: il testo può diventare pubblico.'
       }),
-      el('div', { className: 'form-actions' }, submit, ...(cancel ? [' ', cancel] : []))
+      el('div', { className: 'form-actions' }, submit, cancel)
     );
     onSubmit(form, submit, async () => {
       const body = JSON.stringify({
@@ -399,13 +401,13 @@
 
   function renderReport(report) {
     const badges = el(
-      'p',
-      {},
+      'div',
+      { className: 'report-badges' },
       el('span', { className: 'badge badge-neutral', textContent: CATEGORY_LABELS[report.category] || report.category })
     );
     if (report.is_owner) {
       const [text, className] = STATUS_BADGES[report.status] || [report.status, 'badge-neutral'];
-      badges.append(' ', el('span', { className: `badge ${className}`, textContent: text }));
+      badges.append(el('span', { className: `badge ${className}`, textContent: text }));
     }
 
     const details = [
@@ -414,25 +416,23 @@
       formatDate(report.created_at)
     ].filter(Boolean).join(' · ');
 
-    const message = el('p', { textContent: report.message });
-    message.style.whiteSpace = 'pre-wrap';
-    message.style.overflowWrap = 'anywhere';
+    const message = el('p', { className: 'report-message', textContent: report.message });
 
     const item = el(
       'article',
-      { className: 'card' },
+      { className: 'report-item' },
       badges,
       message,
-      el('p', { className: 'text-muted', textContent: details })
+      el('p', { className: 'text-muted small-meta', textContent: details })
     );
     if (report.is_owner || currentUser?.role === 'admin') {
-      const edit = button('Modifica');
-      const remove = button('Elimina');
+      const edit = button('Modifica', 'btn btn-sm');
+      const remove = button('Elimina', 'btn btn-sm');
       edit.setAttribute('aria-label', `Modifica la segnalazione ${report.id}`);
       remove.setAttribute('aria-label', `Elimina la segnalazione ${report.id}`);
       edit.addEventListener('click', () => startEditing(report));
       remove.addEventListener('click', () => deleteReport(report, remove));
-      item.append(el('div', { className: 'form-actions' }, edit, ' ', remove));
+      item.append(el('div', { className: 'form-actions' }, edit, remove));
     }
     return item;
   }
@@ -463,7 +463,7 @@
       ui.filter = categorySelect('reports-filter', 'Tutte');
       ui.filter.addEventListener('change', loadReports);
       ui.listStatus = el('p', { className: 'text-muted', attrs: { role: 'status', 'aria-live': 'polite' } });
-      ui.list = el('div');
+      ui.list = el('div', { className: 'report-list' });
       panel.replaceChildren(
         el(
           'div',
@@ -479,7 +479,7 @@
           'div',
           { className: 'card' },
           el('h2', { textContent: 'Elenco' }),
-          field('Filtra per categoria', ui.filter),
+          el('div', { className: 'form-narrow' }, field('Filtra per categoria', ui.filter)),
           ui.listStatus,
           ui.list
         )

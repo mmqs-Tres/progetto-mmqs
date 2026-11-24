@@ -3,6 +3,7 @@
   --bg-surface: #ffffff;
   --bg-subtle: #eef3f1;
   --border-color: #dce4e0;
+  --border-control: #7c9189; /* bordo dei campi: contrasto minimo 3:1 */
 
   --text-primary: #16241f;
   --text-secondary: #4b6058;
@@ -74,6 +75,7 @@ body {
 .brand-mark {
   display: inline-grid;
   place-items: center;
+  flex-shrink: 0;
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
@@ -124,6 +126,7 @@ body {
 }
 
 .card {
+  scroll-margin-top: 8rem; /* spazio per la barra fissa */
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
@@ -139,6 +142,16 @@ body {
 h1, h2, h3 {
   margin-top: 0;
   line-height: 1.25;
+}
+
+h1 {
+  margin-bottom: 0.35rem;
+  font-size: 1.45rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
 }
 
 .text-muted {
@@ -208,6 +221,11 @@ h1, h2, h3 {
   background: var(--bg-subtle);
 }
 
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 .btn-sm {
   padding: 0.38rem 0.75rem;
   font-size: 0.82rem;
@@ -222,6 +240,26 @@ h1, h2, h3 {
 .btn-primary:hover {
   background: var(--primary-hover);
   border-color: var(--primary-hover);
+}
+
+.btn-success {
+  background: var(--success);
+  border-color: var(--success);
+  color: #ffffff;
+}
+
+.btn-success:hover {
+  background: #166534;
+}
+
+.btn-danger {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background: #991b1b;
 }
 
 .btn-accent {
@@ -396,7 +434,7 @@ h1, h2, h3 {
   font-size: 0.92rem;
   color: var(--text-primary);
   background: var(--bg-surface);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-control);
   border-radius: var(--radius-sm);
 }
 
@@ -553,8 +591,13 @@ h1, h2, h3 {
 
 .medicines-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(330px, 100%), 1fr));
   gap: 1rem;
+}
+
+.medicines-more {
+  grid-column: 1 / -1;
+  justify-self: center;
 }
 
 .medicine-card {
@@ -650,12 +693,15 @@ h1, h2, h3 {
   list-style: none;
   margin: 0;
   padding: 0;
+  max-height: 13rem;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
 }
 
 .equivalent-item {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -925,6 +971,210 @@ h1, h2, h3 {
   margin-top: 0.5rem;
 }
 
+/* --- Componenti condivisi da Segnalazioni e Area Admin --- */
+.user-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-narrow {
+  max-width: 640px;
+}
+
+.form-actions,
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.row-actions {
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+.form-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0.75rem 0.95rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+.form-fieldset [role="status"]:empty {
+  display: none;
+}
+
+.form-fieldset [role="status"] {
+  margin: 0;
+  font-size: 0.86rem;
+}
+
+.form-fieldset legend {
+  padding-inline: 0.3rem;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.report-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.report-item {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+.report-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.report-message {
+  margin-block: 0.6rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.report-item .form-actions {
+  margin-top: 0.75rem;
+}
+
+.badge-capitalize {
+  text-transform: capitalize;
+}
+
+.upload-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.upload-grid .btn {
+  width: 100%;
+}
+
+.notice-box {
+  margin-block: 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+}
+
+.notice-box[data-type="success"] {
+  background: var(--success-soft);
+  border-color: #bbf7d0;
+}
+
+.notice-box[data-type="error"] {
+  background: var(--danger-soft);
+  border-color: #fecaca;
+}
+
+.notice-title {
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.notice-box[data-type="success"] .notice-title {
+  color: var(--success);
+}
+
+.notice-box[data-type="error"] .notice-title {
+  color: var(--danger);
+}
+
+.notice-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.5rem;
+}
+
+.filter-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-inline .form-control {
+  width: auto;
+}
+
+#tab-admin > .section-head {
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin-top: 0.75rem;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.data-table th {
+  padding: 0.5rem;
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.data-table td {
+  padding: 0.75rem 0.5rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table .badge {
+  white-space: nowrap;
+}
+
+.data-table .cell-nowrap {
+  white-space: nowrap;
+}
+
+.data-table .cell-center {
+  text-align: center;
+}
+
+.data-table .cell-end {
+  text-align: right;
+}
+
+.data-table .cell-sub {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.data-table .cell-message {
+  max-width: 300px;
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 980px) {
   .search-top-grid,
   .map-split-layout {
@@ -941,8 +1191,45 @@ h1, h2, h3 {
 }
 
 @media (max-width: 768px) {
+  /* Barra su due righe: logo e utente, poi i tab */
   .topbar-inner {
-    align-items: flex-start;
+    gap: 0.4rem 0.75rem;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .nav-tabs {
+    order: 1;
+    flex-basis: 100%;
+    flex-wrap: nowrap;
+    gap: 0.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-tab {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.86rem;
+    white-space: nowrap;
+  }
+
+  .map-reset-col .form-label {
+    display: none;
+  }
+
+  #user-status-badge {
+    display: inline-block;
+    max-width: 7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .filter-row,

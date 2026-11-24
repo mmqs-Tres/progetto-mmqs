@@ -31,6 +31,7 @@ L'interfaccia deve risultare **chiara, istituzionale, accessibile e orientata al
   --bg-surface: #ffffff;
   --bg-subtle: #eef3f1;
   --border-color: #dce4e0;
+  --border-control: #7c9189;  /* Bordo dei campi (contrasto 3:1) */
 
   --text-primary: #16241f;
   --text-secondary: #4b6058;

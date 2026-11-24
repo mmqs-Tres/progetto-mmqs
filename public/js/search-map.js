@@ -18,6 +18,8 @@
     activeMedicineContext: null
   };
 
+  const VISIBLE_MEDICINES = 9;
+
   function escapeHtml(value) {
     if (value === null || value === undefined) return '';
     return String(value)
@@ -327,6 +329,24 @@
     return medicines;
   }
 
+  // Senza limite le schede spingono la mappa migliaia di pixel più in basso.
+  function limitVisibleMedicines(gridEl) {
+    const hiddenCards = [...gridEl.children].slice(VISIBLE_MEDICINES);
+    if (hiddenCards.length === 0) return;
+
+    hiddenCards.forEach((card) => card.classList.add('is-hidden'));
+    const moreBtn = document.createElement('button');
+    moreBtn.type = 'button';
+    moreBtn.className = 'btn medicines-more';
+    moreBtn.textContent = `Mostra altri ${hiddenCards.length} farmaci`;
+    moreBtn.addEventListener('click', () => {
+      hiddenCards.forEach((card) => card.classList.remove('is-hidden'));
+      moreBtn.remove();
+      hiddenCards[0].querySelector('button')?.focus();
+    });
+    gridEl.append(moreBtn);
+  }
+
   function renderMedicines(medicines, query) {
     const summaryEl = document.getElementById('medicine-results-summary');
     const gridEl = document.getElementById('medicine-results-grid');
@@ -449,6 +469,8 @@
         `;
       })
       .join('');
+
+    limitVisibleMedicines(gridEl);
 
     gridEl.querySelectorAll('[data-find-pharmacy-for-med]').forEach((btn) => {
       btn.addEventListener('click', async () => {
