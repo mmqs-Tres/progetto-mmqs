@@ -131,12 +131,21 @@ Tutte le risposte API sono in formato JSON. In caso di errore restituiscono `{ "
 - `POST /api/auth/register` — `{ name, email, password }` → `201` `{ token, user }` (ruolo sempre `cittadino`)
 - `POST /api/auth/login` — `{ email, password }` → `200` `{ token, user }`
 - `GET /api/auth/me` (Header `Authorization: Bearer <token>`) → `200` `{ user }`
+- `user` contiene solo `{ id, name, email, role }`; la stessa forma è in `req.user` per le route protette.
+- **Email** salvate e cercate in minuscolo, senza spazi ai lati (vale anche per il seed). **Password** da 8 caratteri a 72 byte, salvate con `bcryptjs`.
+- **`JWT_SECRET`** obbligatorio, minimo 32 caratteri: senza, l'app non parte.
+- **Ruolo** letto dal DB a ogni richiesta, mai dal token: l'utente deve esistere nel DB anche nei test.
+- **Frontend:** a ogni cambio di sessione `reports-auth.js` emette su `document` l'evento `pharma:auth` con `detail = { user }` (`null` per l'ospite).
+- **Limite noto dell'MVP:** nessun limite ai tentativi di login.
 
 ### Segnalazioni (`/api/reports`) — `feat/auth-and-reports`
-- `GET /api/reports` — opzionale `?pharmacy_id=&category=`. Ospite: solo `approved`; utente autenticato: `approved` + proprie segnalazioni in qualsiasi stato.
-- `POST /api/reports` (Auth) — `{ pharmacy_id, medicine_name, category, message }` → `201` (creata con stato `pending`)
-- `PUT /api/reports/:id` (Auth, solo proprietario o `admin`) — aggiorna campi e resetta a `pending` se modificata dal cittadino
-- `DELETE /api/reports/:id` (Auth, solo proprietario o `admin`) → `200`
+- `GET /api/reports` — opzionale `?pharmacy_id=&category=`. Ospite: solo `approved`; utente autenticato (anche `admin`): `approved` + proprie segnalazioni in qualsiasi stato → `200` `{ reports: [...] }`
+- `POST /api/reports` (Auth) — `{ pharmacy_id, medicine_name, category, message }` → `201` `{ report }` (creata con stato `pending`, anche dall'`admin`)
+- `PUT /api/reports/:id` (Auth, solo proprietario o `admin`) — aggiorna campi e resetta a `pending` se modificata dal cittadino; la modifica dell'`admin` non cambia lo stato. I campi assenti restano invariati → `200` `{ report }`
+- `DELETE /api/reports/:id` (Auth, solo proprietario o `admin`) → `200` `{ message }`
+- **`report`**: `{ id, pharmacy_id, pharmacy_name, pharmacy_comune, medicine_name, category, message, status, created_at, updated_at, is_owner }`. L'autore non è mai esposto, perché il testo può rivelare dati sanitari: al suo posto c'è `is_owner`.
+- **Campi:** `category` e `message` (massimo 1000 caratteri) obbligatori; `medicine_name` (massimo 200) e `pharmacy_id` facoltativi. Se indicata, la farmacia deve esistere.
+- **Date** in UTC senza indicatore di fuso (`YYYY-MM-DD HH:MM:SS`): il frontend deve convertirle.
 
 ### Ricerca, Equivalenti & Mappa (`/api/search` / `/api/...`) — `feat/search-map-ui`
 - `GET /api/medicines?q=...` — cerca per `commercial_name` o `active_ingredient`, restituendo per ogni farmaco anche i relativi `equivalents` (stesso `active_ingredient`, ordinati per `price ASC`)
@@ -156,6 +165,8 @@ Tutte le risposte API sono in formato JSON. In caso di errore restituiscono `{ "
 - CommonJS (`require` / `module.exports`) coerente in tutto `src/` e `data/`.
 - Indentazione a 2 spazi, punto e virgola coerente, nomi di file in `kebab-case` o `dot.case` (`auth.routes.js`).
 - Query SQL sempre parametrizzate (`?` di `better-sqlite3`) per prevenire SQL injection.
+- Aggiornare righe esistenti con `INSERT ... ON CONFLICT DO UPDATE`, mai `INSERT OR REPLACE`: il `REPLACE` elimina la riga e, per le chiavi esterne, azzera `pharmacy_id` nelle segnalazioni o cancella le segnalazioni dell'utente.
+- Testi inseriti dagli utenti mostrati solo con `textContent`, mai `innerHTML` (XSS).
 - Nessun segreto, token, password reale o dato personale reale nel repository.
 - Utenti di prova **esclusivamente inventati** (es. `cittadino@pharmapuglia.test` / `admin@pharmapuglia.test`).
 

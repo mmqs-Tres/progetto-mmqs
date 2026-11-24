@@ -31,6 +31,7 @@ Verrà utilizzato come fonte diretta per compilare le sezioni **7 (Sviluppo con 
   - CRUD segnalazioni con permessi, ritorno in moderazione dopo la modifica e nessun dato dell'autore nelle risposte.
   - Interfaccia di accesso e segnalazioni (`public/js/reports-auth.js`), con evento `pharma:auth` per gli altri moduli.
   - 28 test API e verifica manuale nel browser.
+  - Aggiornamento di `decisioni.md`, `AGENTS.md` e `.env.example` con le regole su autenticazione e segnalazioni.
 - **Coding agent, modelli, approccio e skill usati:**
   - **Agent & Modello:** Antigravity (Gemini) per `chore/project-setup`; Claude Code (Claude Opus 5.5) per `feat/auth-and-reports`
   - **Approccio:** Planning guidato con domande preliminari + esecuzione passo-passo verificata con test (`chore/project-setup`); Plan Mode con analisi delle falle e piano approvato prima dello sviluppo (`feat/auth-and-reports`)
