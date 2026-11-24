@@ -227,3 +227,232 @@ test('l\'app non parte senza un JWT_SECRET adeguato', () => {
     assert.match(result.stderr, /JWT_SECRET mancante o troppo corto/);
   }
 });
+
+// --- Segnalazioni ---
+
+const VALID_REPORT = { category: 'turno', message: 'Sportello notturno attivo.' };
+
+function insertPharmacy(code = 'F1') {
+  const { lastInsertRowid } = getDb()
+    .prepare("INSERT INTO pharmacies (ministry_code, name, address, comune, provincia) VALUES (?, 'Farmacia Prova', 'Via Finta 1', 'Bari', 'BA')")
+    .run(code);
+  return Number(lastInsertRowid);
+}
+
+async function createReport(token, body = VALID_REPORT) {
+  const res = await request(app).post('/api/reports').set(bearer(token)).send(body);
+  assert.equal(res.status, 201);
+  return res.body.report;
+}
+
+function setStatus(id, status) {
+  getDb().prepare('UPDATE reports SET status = ? WHERE id = ?').run(status, id);
+}
+
+async function listIds(token, query = '') {
+  const req = request(app).get(`/api/reports${query}`);
+  const res = await (token ? req.set(bearer(token)) : req);
+  assert.equal(res.status, 200);
+  return res.body.reports.map((report) => report.id);
+}
+
+test('POST /api/reports crea una segnalazione pending e ignora i campi riservati', async () => {
+  const pharmacyId = insertPharmacy();
+  const { token, user } = await register('mario@pharmapuglia.test');
+  const other = await register('lucia@pharmapuglia.test');
+  const report = await createReport(token, {
+    ...VALID_REPORT,
+    message: '  Sportello notturno attivo.  ',
+    medicine_name: ' Tachipirina ',
+    pharmacy_id: pharmacyId,
+    status: 'approved',
+    user_id: other.user.id
+  });
+  assert.equal(report.status, 'pending');
+  assert.equal(report.is_owner, true);
+  assert.equal(report.message, 'Sportello notturno attivo.');
+  assert.equal(report.medicine_name, 'Tachipirina');
+  assert.equal(report.pharmacy_name, 'Farmacia Prova');
+  assert.equal(report.pharmacy_comune, 'Bari');
+
+  const row = getDb().prepare('SELECT user_id FROM reports WHERE id = ?').get(report.id);
+  assert.equal(row.user_id, user.id);
+});
+
+test('anche le segnalazioni create da un admin nascono pending', async () => {
+  const admin = await registerAdmin();
+  assert.equal((await createReport(admin.token)).status, 'pending');
+});
+
+test('POST /api/reports accetta farmacia e farmaco assenti', async () => {
+  const { token } = await register('mario@pharmapuglia.test');
+  const report = await createReport(token, { ...VALID_REPORT, medicine_name: ' ', pharmacy_id: null });
+  assert.equal(report.pharmacy_id, null);
+  assert.equal(report.medicine_name, null);
+});
+
+test('POST /api/reports rifiuta dati non validi con 400', async () => {
+  const { token } = await register('mario@pharmapuglia.test');
+  const invalid = [
+    { category: 'inesistente' },
+    { category: ['turno'] },
+    { category: undefined },
+    { message: '   ' },
+    { message: 'x'.repeat(1001) },
+    { message: { a: 1 } },
+    { medicine_name: 5 },
+    { medicine_name: 'x'.repeat(201) },
+    { pharmacy_id: 999 },
+    { pharmacy_id: true },
+    { pharmacy_id: 'abc' },
+    { pharmacy_id: -1 },
+    { pharmacy_id: 1.5 },
+    { pharmacy_id: [1] }
+  ];
+  for (const override of invalid) {
+    const res = await request(app)
+      .post('/api/reports')
+      .set(bearer(token))
+      .send({ ...VALID_REPORT, ...override });
+    assert.equal(res.status, 400, JSON.stringify(override));
+    assert.ok(res.body.error);
+  }
+  assert.equal((await request(app).post('/api/reports').set(bearer(token))).status, 400);
+});
+
+test('GET /api/reports mostra le approvate a tutti e le altre solo all\'autore', async () => {
+  const mario = await register('mario@pharmapuglia.test');
+  const lucia = await register('lucia@pharmapuglia.test');
+  const admin = await registerAdmin();
+  const approved = await createReport(mario.token);
+  const pending = await createReport(mario.token);
+  const rejected = await createReport(mario.token);
+  setStatus(approved.id, 'approved');
+  setStatus(rejected.id, 'rejected');
+
+  assert.deepEqual(await listIds(null), [approved.id]);
+  assert.deepEqual(await listIds('token-non-valido'), [approved.id]);
+  assert.deepEqual(await listIds(lucia.token), [approved.id]);
+  assert.deepEqual(await listIds(admin.token), [approved.id]);
+  assert.deepEqual(await listIds(mario.token), [rejected.id, pending.id, approved.id]);
+});
+
+test('i filtri non rivelano le segnalazioni altrui non approvate', async () => {
+  const pharmacyId = insertPharmacy();
+  const mario = await register('mario@pharmapuglia.test');
+  const lucia = await register('lucia@pharmapuglia.test');
+  const pending = await createReport(mario.token, { ...VALID_REPORT, pharmacy_id: pharmacyId });
+  const approved = await createReport(mario.token, { ...VALID_REPORT, pharmacy_id: pharmacyId });
+  const elsewhere = await createReport(mario.token, { ...VALID_REPORT, category: 'altro' });
+  setStatus(approved.id, 'approved');
+  setStatus(elsewhere.id, 'approved');
+
+  assert.deepEqual(await listIds(null, `?pharmacy_id=${pharmacyId}&category=turno`), [approved.id]);
+  assert.deepEqual(await listIds(lucia.token, '?category=turno'), [approved.id]);
+  assert.deepEqual(await listIds(mario.token, '?category=turno'), [approved.id, pending.id]);
+  assert.deepEqual(await listIds(null, '?category=altro'), [elsewhere.id]);
+});
+
+test('GET /api/reports rifiuta filtri non validi con 400', async () => {
+  const queries = ['pharmacy_id=abc', 'pharmacy_id=1&pharmacy_id=2', 'category=boh', 'category=turno&category=altro'];
+  for (const query of queries) {
+    assert.equal((await request(app).get(`/api/reports?${query}`)).status, 400, query);
+  }
+});
+
+test('le risposte non espongono dati dell\'autore', async () => {
+  const mario = await register('mario@pharmapuglia.test', { name: 'Nome Riservato' });
+  const report = await createReport(mario.token);
+  setStatus(report.id, 'approved');
+  const res = await request(app).get('/api/reports');
+  assert.equal(res.body.reports[0].is_owner, false);
+  assert.ok(!('user_id' in res.body.reports[0]));
+  assert.doesNotMatch(res.text, /Nome Riservato|mario@/);
+});
+
+test('la modifica del cittadino riporta sempre a pending', async () => {
+  const { token } = await register('mario@pharmapuglia.test');
+  const report = await createReport(token);
+  for (const status of ['approved', 'rejected']) {
+    setStatus(report.id, status);
+    const res = await request(app)
+      .put(`/api/reports/${report.id}`)
+      .set(bearer(token))
+      .send({ message: `Testo dopo ${status}`, status: 'approved' });
+    assert.equal(res.status, 200);
+    assert.equal(res.body.report.status, 'pending');
+    assert.equal(res.body.report.message, `Testo dopo ${status}`);
+    assert.equal(res.body.report.category, VALID_REPORT.category);
+  }
+  assert.deepEqual(await listIds(null), []);
+});
+
+test('PUT conserva i campi assenti, azzera quelli nulli e aggiorna updated_at', async () => {
+  const pharmacyId = insertPharmacy();
+  const { token } = await register('mario@pharmapuglia.test');
+  const report = await createReport(token, { ...VALID_REPORT, pharmacy_id: pharmacyId, medicine_name: 'Aspirina' });
+  getDb().prepare("UPDATE reports SET updated_at = '2020-01-01 00:00:00' WHERE id = ?").run(report.id);
+
+  const put = (body) => request(app).put(`/api/reports/${report.id}`).set(bearer(token)).send(body);
+  const kept = (await put({ category: 'altro' })).body.report;
+  assert.equal(kept.pharmacy_id, pharmacyId);
+  assert.equal(kept.medicine_name, 'Aspirina');
+  assert.equal(kept.category, 'altro');
+  assert.ok(kept.updated_at > '2020-01-01 00:00:00');
+  assert.equal(kept.created_at, report.created_at);
+
+  const cleared = (await put({ pharmacy_id: null, medicine_name: null })).body.report;
+  assert.equal(cleared.pharmacy_id, null);
+  assert.equal(cleared.medicine_name, null);
+  assert.equal((await put({ message: '' })).status, 400);
+});
+
+test('la modifica dell\'admin non cambia lo stato né l\'autore', async () => {
+  const mario = await register('mario@pharmapuglia.test');
+  const admin = await registerAdmin();
+  const report = await createReport(mario.token);
+  setStatus(report.id, 'approved');
+  const res = await request(app)
+    .put(`/api/reports/${report.id}`)
+    .set(bearer(admin.token))
+    .send({ message: 'Corretto da admin', status: 'rejected' });
+  assert.equal(res.status, 200);
+  assert.equal(res.body.report.status, 'approved');
+  assert.equal(res.body.report.is_owner, false);
+  const row = getDb().prepare('SELECT user_id FROM reports WHERE id = ?').get(report.id);
+  assert.equal(row.user_id, mario.user.id);
+});
+
+test('scritture senza permesso: 401, 403, 404 e 400', async () => {
+  const mario = await register('mario@pharmapuglia.test');
+  const lucia = await register('lucia@pharmapuglia.test');
+  const report = await createReport(mario.token);
+
+  assert.equal((await request(app).post('/api/reports').send(VALID_REPORT)).status, 401);
+  for (const method of ['put', 'delete']) {
+    const call = (id, token) => {
+      const req = request(app)[method](`/api/reports/${id}`).send(VALID_REPORT);
+      return token ? req.set(bearer(token)) : req;
+    };
+    assert.equal((await call(report.id)).status, 401);
+    assert.equal((await call(report.id, lucia.token)).status, 403);
+    assert.equal((await call(9999, mario.token)).status, 404);
+    for (const id of ['abc', '0', '-1', '1.5', '1e3']) {
+      assert.equal((await call(id, mario.token)).status, 400, id);
+    }
+  }
+  assert.deepEqual(await listIds(mario.token), [report.id]);
+});
+
+test('DELETE è consentito al proprietario e all\'admin', async () => {
+  const mario = await register('mario@pharmapuglia.test');
+  const admin = await registerAdmin();
+  const first = await createReport(mario.token);
+  const second = await createReport(mario.token);
+  for (const [id, token] of [[first.id, mario.token], [second.id, admin.token]]) {
+    const res = await request(app).delete(`/api/reports/${id}`).set(bearer(token));
+    assert.equal(res.status, 200);
+    assert.ok(res.body.message);
+  }
+  assert.deepEqual(await listIds(mario.token), []);
+});
