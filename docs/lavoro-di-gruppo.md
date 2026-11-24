@@ -14,8 +14,8 @@ Verrà utilizzato come fonte diretta per compilare le sezioni **7 (Sviluppo con 
 | PR #4 | `chore/project-setup` | Gabriele (`Fariguu`) | Marco, Jennifer | Mergiata (approvata da Jennifer) | Setup iniziale Express + SQLite, schema DB, `.gitignore`, `.env.example`, `decisioni.md`, `AGENTS.md`, shell frontend |
 | PR #5 | `feat/auth-and-reports` | Gabriele (`Fariguu`) | Marco, Jennifer | Mergiata | Autenticazione RBAC (`cittadino`/`admin`), CRUD segnalazioni con interfaccia e test API |
 | PR #6 | `feat/search-map-ui` | Jennifer (`jenniferdibenedetto`) | Gabriele, Marco | Mergiata | Ricerca farmaci e matching equivalenti AIFA, inquadramento Comune → ASL/Distretto, mappa Leaflet/Nominatim e UI |
-| PR #7 | `feat/data-ingestion-admin` | Marco (`DarkFury17`) | Gabriele, Jennifer | Aperta / In review | Dataset ufficiali Puglia, seed DB, upload CSV/JSON Admin e pannello moderazione segnalazioni |
-| *(da aprire)* | `fix/integration-polish` | Gruppo | Tutti | In preparazione | Integrazione finale, fix post-merge e verifica end-to-end |
+| PR #7 | `feat/data-ingestion-admin` | Marco (`DarkFury17`) | Gabriele, Jennifer | Mergiata | Dataset ufficiali Puglia, seed DB, upload CSV/JSON Admin e pannello moderazione segnalazioni |
+| *(da aprire)* | `fix/integration-polish` | Gruppo | Tutti | In sviluppo | Integrazione finale, fix post-merge e verifica end-to-end |
 | *(da aprire)* | `docs/readme-and-screenshots` | Gruppo | Tutti | In preparazione | Screenshot finali e stesura completa del `README.md` di consegna |
 
 ---
@@ -23,7 +23,7 @@ Verrà utilizzato come fonte diretta per compilare le sezioni **7 (Sviluppo con 
 ## 2. Contributi per membro
 
 ### Farigu Gabriele Vitocosmo (`Fariguu`)
-- **Branch principali:** `chore/project-setup`, `feat/auth-and-reports`
+- **Branch principali:** `chore/project-setup`, `feat/auth-and-reports`, `fix/integration-polish`
 - **Attività svolte:**
   - Setup architetturale del repository (`package.json`, `.gitignore`, `.env.example`, `src/app.js`, `src/server.js`, `src/db/schema.sql`, `src/db/database.js`, `src/middleware/auth.js`, shell `public/`).
   - Redazione di `decisioni.md`, `AGENTS.md` e `docs/lavoro-di-gruppo.md`.
@@ -32,10 +32,12 @@ Verrà utilizzato come fonte diretta per compilare le sezioni **7 (Sviluppo con 
   - Interfaccia di accesso e segnalazioni (`public/js/reports-auth.js`), con evento `pharma:auth` per gli altri moduli.
   - 28 test API e verifica manuale nel browser.
   - Aggiornamento di `decisioni.md`, `AGENTS.md` e `.env.example` con le regole su autenticazione e segnalazioni.
+  - Integrazione (`fix/integration-polish`): stile uniforme di form e Area Admin, layout responsive, schede farmaco e mappa utilizzabili con i dati reali.
+  - Correzioni (`fix/integration-polish`): login unico, password di prova spostate in `.env`, rimozione dei dati d'esempio, ricerca senza accenti, CSP, messaggi di errore e 16 test di integrazione.
 - **Coding agent, modelli, approccio e skill usati:**
-  - **Agent & Modello:** Antigravity (Gemini) per `chore/project-setup`; Claude Code (Claude Opus 5.5) per `feat/auth-and-reports`
-  - **Approccio:** Planning guidato con domande preliminari + esecuzione passo-passo verificata con test (`chore/project-setup`); Plan Mode con analisi delle falle e piano approvato prima dello sviluppo (`feat/auth-and-reports`)
-  - **Skill usate:** `built-in-browser` (inclusa in Claude Code desktop, di Anthropic) per la verifica nel browser di `feat/auth-and-reports`; *(da annotare eventuali skill usate in `chore/project-setup`)*
+  - **Agent & Modello:** Antigravity (Gemini) per `chore/project-setup`; Claude Code (Claude Opus 5.5) per `feat/auth-and-reports` e `fix/integration-polish`
+  - **Approccio:** Planning guidato con domande preliminari + esecuzione passo-passo verificata con test (`chore/project-setup`); Plan Mode con analisi delle falle e piano approvato prima dello sviluppo (`feat/auth-and-reports`); verifica del `main` integrato, poi correzioni con test e prove nel browser (`fix/integration-polish`)
+  - **Skill usate:** `built-in-browser` (inclusa in Claude Code desktop, di Anthropic) per la verifica nel browser di `feat/auth-and-reports` e `fix/integration-polish`; *(da annotare eventuali skill usate in `chore/project-setup`)*
 
 ---
 

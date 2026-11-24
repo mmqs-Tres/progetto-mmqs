@@ -27,7 +27,7 @@ Prima di modificare o creare file, leggi sempre [`decisioni.md`](./decisioni.md)
 - **Workflow PR:** non fare mai push diretto su `main`; lavorare sempre su branch dedicati e aprire una PR richiedendo review agli altri membri.
 
 ## 4. Comandi utili
-- Prima configurazione: copiare `.env.example` in `.env` e impostare un `JWT_SECRET` di almeno 32 caratteri, altrimenti l'app non parte (i test non ne hanno bisogno)
+- Prima configurazione: copiare `.env.example` in `.env` e impostare un `JWT_SECRET` di almeno 32 caratteri, altrimenti l'app non parte, e le due password `SEED_*`, altrimenti il seed si ferma (i test non ne hanno bisogno)
 - Avvio sviluppo: `npm run dev`
 - Avvio produzione: `npm start`
 - Seed database: `npm run seed`
