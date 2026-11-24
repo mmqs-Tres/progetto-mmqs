@@ -1,6 +1,6 @@
 # Progetto di Tres
 
-Nome del progetto: PharmaPugliaa OpenCare
+Nome del progetto: PharmaPuglia OpenCare
 
 ## Membri
 

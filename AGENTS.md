@@ -17,14 +17,17 @@ Prima di modificare o creare file, leggi sempre [`decisioni.md`](./decisioni.md)
 
 ## 3. Regole obbligatorie
 - **Stack:** Node.js (CommonJS) + Express + SQLite (`better-sqlite3`) + HTML/CSS/JS vanilla in `public/`. Non introdurre framework frontend o bundler non concordati.
-- **Database:** usare sempre query parametrizzate con `src/db/database.js`. Non committare mai file `*.db` o `*.sqlite`.
-- **Sicurezza e segreti:** mai hardcodare password, API key o `JWT_SECRET`. Leggere sempre da `process.env` e documentare eventuali nuove chiavi in `.env.example` (senza valori reali).
+- **Database:** usare sempre query parametrizzate con `src/db/database.js`. Non committare mai file `*.db` o `*.sqlite`. Per aggiornare righe esistenti usare `ON CONFLICT DO UPDATE`, mai `INSERT OR REPLACE`: cancella o scollega le segnalazioni collegate.
+- **Sicurezza e segreti:** mai hardcodare password, API key o `JWT_SECRET`, nemmeno come valore di riserva. Leggere sempre da `process.env` e documentare eventuali nuove chiavi in `.env.example` (senza valori reali).
+- **Testi degli utenti:** nel frontend mostrarli solo con `textContent`, mai con `innerHTML`.
+- **Autenticazione:** proteggere le route con `requireAuth` / `requireAdmin` di `src/middleware/auth.js`; il ruolo arriva dal DB, mai dal token o dal client.
 - **Dati di prova:** usare solo dati e utenti inventati (es. dominio `.test`), mai dati personali reali.
 - **Perimetro del branch:** modificare solo i file assegnati al proprio branch come indicato in `decisioni.md` per evitare conflitti di merge.
 - **Tracciamento lavoro di gruppo:** prima di aprire ogni PR, aggiornare la propria sottosezione in `docs/lavoro-di-gruppo.md` (attività svolte, PR, agent/modelli/approccio/skill usati) senza modificare le sezioni degli altri membri.
 - **Workflow PR:** non fare mai push diretto su `main`; lavorare sempre su branch dedicati e aprire una PR richiedendo review agli altri membri.
 
 ## 4. Comandi utili
+- Prima configurazione: copiare `.env.example` in `.env` e impostare un `JWT_SECRET` di almeno 32 caratteri, altrimenti l'app non parte, e le due password `SEED_*`, altrimenti il seed si ferma (i test non ne hanno bisogno)
 - Avvio sviluppo: `npm run dev`
 - Avvio produzione: `npm start`
 - Seed database: `npm run seed`
