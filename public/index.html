@@ -38,10 +38,243 @@
 
     <!-- Vista 1: Ricerca farmaci, equivalenti, ASL e Mappa (branch: feat/search-map-ui) -->
     <section id="tab-search" class="tab-panel">
-      <div class="card">
-        <h1>Ricerca Farmaci, Equivalenti e Presidi Pugliesi</h1>
-        <p class="text-muted">Sezione in sviluppo sul branch <code>feat/search-map-ui</code>.</p>
+      <!-- Intestazione istituzionale e indicatori territoriali -->
+      <div class="card hero-card">
+        <div class="hero-header">
+          <div>
+            <span class="badge badge-accent">Servizio Sanitario Regionale · Open Data Puglia</span>
+            <h1 class="hero-title">Ricerca Farmaci Equivalenti AIFA, Distretti ASL e Presidi Farmaceutici</h1>
+            <p class="text-muted hero-subtitle">
+              Consulta il prontuario AIFA per confrontare i medicinali generici a minor costo, individua la tua ASL e il Distretto Socio-Sanitario per Comune e calcola il percorso verso le farmacie più vicine.
+            </p>
+          </div>
+          <div class="kpi-strip" aria-label="Riepilogo dati caricati">
+            <div class="kpi-box">
+              <strong id="kpi-medicines-count">0</strong>
+              <span>Farmaci AIFA</span>
+            </div>
+            <div class="kpi-box">
+              <strong id="kpi-pharmacies-count">0</strong>
+              <span>Presidi Puglia</span>
+            </div>
+            <div class="kpi-box">
+              <strong id="kpi-districts-count">0</strong>
+              <span>Distretti ASL</span>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Griglia superiore: Inquadramento Comune -> ASL/Distretto & Ricerca Rapida Farmaci -->
+      <div class="search-top-grid">
+        <!-- Colonna 1: Inquadramento Territoriale Comune -> ASL / Distretto Socio-Sanitario -->
+        <article class="card" aria-labelledby="heading-district">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Open Data Regione Puglia</span>
+              <h2 id="heading-district">Inquadramento Comune → ASL e Distretto</h2>
+            </div>
+          </div>
+          <p class="text-muted section-desc">
+            Seleziona o cerca un Comune pugliese per conoscere l'Azienda Sanitaria Locale (ASL), il codice del Distretto Socio-Sanitario e i presidi attivi.
+          </p>
+
+          <form id="district-search-form" class="form-stack" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="district-comune-select">Comune pugliese</label>
+              <div class="input-row">
+                <select id="district-comune-select" class="form-control">
+                  <option value="">Tutti i Comuni della Puglia</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Inquadra</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="quick-chips" aria-label="Comuni principali">
+            <span class="chips-label">Accesso rapido:</span>
+            <button type="button" class="chip-btn" data-quick-comune="Bari">Bari</button>
+            <button type="button" class="chip-btn" data-quick-comune="Lecce">Lecce</button>
+            <button type="button" class="chip-btn" data-quick-comune="Taranto">Taranto</button>
+            <button type="button" class="chip-btn" data-quick-comune="Foggia">Foggia</button>
+            <button type="button" class="chip-btn" data-quick-comune="Brindisi">Brindisi</button>
+            <button type="button" class="chip-btn" data-quick-comune="Barletta">Barletta</button>
+          </div>
+
+          <div id="district-result-container" class="district-result-area" aria-live="polite"></div>
+        </article>
+
+        <!-- Colonna 2: Motore di Ricerca Farmaci & Matching Equivalenti AIFA -->
+        <article class="card" aria-labelledby="heading-medicines">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Prontuario Ufficiale AIFA</span>
+              <h2 id="heading-medicines">Ricerca Farmaci e Equivalenti Generici</h2>
+            </div>
+          </div>
+          <p class="text-muted section-desc">
+            Cerca per <strong>nome commerciale</strong>, <strong>principio attivo</strong> o <strong>codice AIC/ATC</strong> per confrontare il prezzo e visualizzare gli equivalenti generici autorizzati.
+          </p>
+
+          <form id="medicine-search-form" class="form-stack" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="medicine-query-input">Nome farmaco, principio attivo o codice AIC</label>
+              <div class="input-row">
+                <input
+                  id="medicine-query-input"
+                  class="form-control"
+                  type="search"
+                  placeholder="Es. Tachipirina, Paracetamolo, Moment, Ibuprofene, Augmentin..."
+                  autocomplete="off"
+                />
+                <button type="submit" class="btn btn-primary">Cerca farmaco</button>
+              </div>
+            </div>
+
+            <div class="filter-row">
+              <div class="form-group">
+                <label class="form-label" for="medicine-generic-filter">Tipologia AIFA</label>
+                <select id="medicine-generic-filter" class="form-control">
+                  <option value="">Tutti (Brand + Equivalenti)</option>
+                  <option value="1">Solo Equivalenti / Generici</option>
+                  <option value="0">Solo Farmaci Brand</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="medicine-prescription-filter">Regime di dispensazione</label>
+                <select id="medicine-prescription-filter" class="form-control">
+                  <option value="">Tutti i regimi</option>
+                  <option value="0">Senza ricetta (SOP / OTC)</option>
+                  <option value="1">Con ricetta medica (RR)</option>
+                </select>
+              </div>
+            </div>
+          </form>
+
+          <div class="quick-chips" aria-label="Ricerche frequenti farmaci">
+            <span class="chips-label">Esempi AIFA:</span>
+            <button type="button" class="chip-btn" data-quick-medicine="Paracetamolo">Paracetamolo</button>
+            <button type="button" class="chip-btn" data-quick-medicine="Tachipirina">Tachipirina</button>
+            <button type="button" class="chip-btn" data-quick-medicine="Ibuprofene">Ibuprofene</button>
+            <button type="button" class="chip-btn" data-quick-medicine="Augmentin">Augmentin</button>
+            <button type="button" class="chip-btn" data-quick-medicine="Omeprazolo">Omeprazolo</button>
+            <button type="button" class="chip-btn" data-quick-medicine="">Mostra tutti</button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Risultati Ricerca Farmaci e Comparatore Equivalenti AIFA -->
+      <section class="card" aria-labelledby="heading-medicines-results">
+        <div class="results-toolbar">
+          <div>
+            <h2 id="heading-medicines-results" class="section-subtitle">Schede Farmaci e Comparazione Equivalenti AIFA</h2>
+            <p id="medicine-results-summary" class="text-muted small-meta" aria-live="polite">
+              Caricamento prontuario farmaci in corso...
+            </p>
+          </div>
+          <button type="button" id="medicine-reset-btn" class="btn">Azzera filtri farmaci</button>
+        </div>
+
+        <div id="medicine-results-grid" class="medicines-grid" aria-live="polite"></div>
+      </section>
+
+      <!-- Sezione Mappa Interattiva Leaflet + Geocoding Nominatim + Presidi Min. Salute -->
+      <section class="card" id="map-section-card" aria-labelledby="heading-map-section">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Ministero della Salute · OpenStreetMap &amp; Nominatim</span>
+            <h2 id="heading-map-section">Mappa Interattiva Farmacie e Parafarmacie della Puglia</h2>
+          </div>
+          <div id="active-medicine-context" class="active-context-pill is-hidden" aria-live="polite"></div>
+        </div>
+
+        <p class="text-muted section-desc">
+          Inserisci un indirizzo o Comune (geocoding <strong>OpenStreetMap Nominatim</strong>) oppure usa il GPS per calcolare la distanza dai presidi più vicini e ottenere le indicazioni stradali.
+        </p>
+
+        <!-- Barra filtri e geocoding mappa -->
+        <form id="map-filter-form" class="map-controls-grid" novalidate>
+          <div class="form-group map-geocode-group">
+            <label class="form-label" for="geocode-address-input">Indirizzo o punto di partenza (Nominatim)</label>
+            <div class="input-row">
+              <input
+                id="geocode-address-input"
+                class="form-control"
+                type="search"
+                placeholder="Es. Via Sparano Bari, Piazza Sant'Oronzo Lecce, Taranto..."
+                autocomplete="off"
+              />
+              <button type="submit" class="btn btn-primary" id="geocode-submit-btn">Calcola distanza</button>
+              <button type="button" class="btn" id="use-gps-btn" title="Usa posizione GPS del browser">
+                Usa GPS
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="pharmacy-comune-filter">Filtra per Comune</label>
+            <select id="pharmacy-comune-filter" class="form-control">
+              <option value="">Tutti i Comuni</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="pharmacy-type-filter">Tipologia presidio</label>
+            <select id="pharmacy-type-filter" class="form-control">
+              <option value="">Farmacie + Parafarmacie</option>
+              <option value="farmacia">Solo Farmacie (Ricetta RR + SOP/OTC)</option>
+              <option value="parafarmacia">Solo Parafarmacie (SOP/OTC)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="pharmacy-radius-filter">Raggio di ricerca</label>
+            <select id="pharmacy-radius-filter" class="form-control">
+              <option value="">Tutta la Puglia</option>
+              <option value="5">Entro 5 km</option>
+              <option value="15">Entro 15 km</option>
+              <option value="30">Entro 30 km</option>
+              <option value="60">Entro 60 km</option>
+            </select>
+          </div>
+
+          <div class="form-group map-reset-col">
+            <span class="form-label" aria-hidden="true">&nbsp;</span>
+            <button type="button" class="btn" id="map-reset-btn">Reset mappa</button>
+          </div>
+        </form>
+
+        <div id="geocode-status-bar" class="geocode-status is-hidden" role="status" aria-live="polite"></div>
+
+        <!-- Layout split: Mappa Leaflet a sinistra + Lista presidi ordinati per distanza a destra -->
+        <div class="map-split-layout">
+          <div class="map-column">
+            <div id="pharmacy-map" class="leaflet-map-box" role="region" aria-label="Mappa interattiva dei presidi farmaceutici in Puglia"></div>
+            <div class="map-legend" aria-label="Legenda mappa">
+              <span class="legend-item">
+                <span class="legend-dot legend-dot-farmacia" aria-hidden="true"></span>
+                Farmacia (dispensazione completa + ricette)
+              </span>
+              <span class="legend-item">
+                <span class="legend-dot legend-dot-parafarmacia" aria-hidden="true"></span>
+                Parafarmacia (farmaci SOP / OTC senza obbligo di ricetta)
+              </span>
+              <span class="legend-item">
+                <span class="legend-dot legend-dot-user" aria-hidden="true"></span>
+                Posizione selezionata
+              </span>
+            </div>
+          </div>
+
+          <div class="pharmacy-list-column">
+            <div class="pharmacy-list-header">
+              <strong id="pharmacy-list-title">Presidi sul territorio</strong>
+              <span class="badge badge-neutral" id="pharmacy-results-badge">0 presidi</span>
+            </div>
+            <div id="pharmacy-list-container" class="pharmacy-list" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
     </section>
 
     <!-- Vista 2: Autenticazione e CRUD Segnalazioni (branch: feat/auth-and-reports) -->
