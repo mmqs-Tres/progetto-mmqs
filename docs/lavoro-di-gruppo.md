@@ -15,7 +15,7 @@ Verrà utilizzato come fonte diretta per compilare le sezioni **7 (Sviluppo con 
 | PR #5 | `feat/auth-and-reports` | Gabriele (`Fariguu`) | Marco, Jennifer | Mergiata | Autenticazione RBAC (`cittadino`/`admin`), CRUD segnalazioni con interfaccia e test API |
 | PR #6 | `feat/search-map-ui` | Jennifer (`jenniferdibenedetto`) | Gabriele, Marco | Mergiata | Ricerca farmaci e matching equivalenti AIFA, inquadramento Comune → ASL/Distretto, mappa Leaflet/Nominatim e UI |
 | PR #7 | `feat/data-ingestion-admin` | Marco (`DarkFury17`) | Gabriele, Jennifer | Mergiata | Dataset ufficiali Puglia, seed DB, upload CSV/JSON Admin e pannello moderazione segnalazioni |
-| *(da aprire)* | `fix/integration-polish` | Gruppo | Tutti | In sviluppo | Integrazione finale, fix post-merge e verifica end-to-end |
+| PR #8 | `fix/integration-polish` | Gruppo | Tutti | Aperta / In review | Integrazione finale, fix post-merge e verifica end-to-end |
 | *(da aprire)* | `docs/readme-and-screenshots` | Gruppo | Tutti | In preparazione | Screenshot finali e stesura completa del `README.md` di consegna |
 
 ---
