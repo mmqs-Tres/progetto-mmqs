@@ -59,7 +59,8 @@
     }
 
     state.map = window.L.map(mapContainer, {
-      scrollWheelZoom: true
+      scrollWheelZoom: true,
+      preferCanvas: true // i presidi sono quasi duemila: un elemento HTML ciascuno sarebbe lento
     }).setView(PUGLIA_CENTER, PUGLIA_DEFAULT_ZOOM);
 
     window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -79,20 +80,6 @@
         }, 80);
       });
     }
-  }
-
-  function createCustomIcon(type) {
-    if (typeof window.L === 'undefined') return null;
-    const isParafarmacia = type === 'parafarmacia';
-    const cssClass = isParafarmacia ? 'marker-parafarmacia' : 'marker-farmacia';
-    const symbol = isParafarmacia ? 'P' : '+';
-    return window.L.divIcon({
-      className: '',
-      html: `<div class="custom-leaflet-marker ${cssClass}" aria-hidden="true">${symbol}</div>`,
-      iconSize: [28, 28],
-      iconAnchor: [14, 14],
-      popupAnchor: [0, -14]
-    });
   }
 
   function createUserIcon() {
@@ -315,7 +302,7 @@
     if (!q && generic === '' && prescription === '') {
       const kpiMedicines = document.getElementById('kpi-medicines-count');
       if (kpiMedicines) {
-        kpiMedicines.textContent = String(medicines.length);
+        kpiMedicines.textContent = String(Number(data.total) || medicines.length);
       }
     }
 
@@ -325,7 +312,7 @@
       btn.classList.toggle('is-active', chipQuery.toLowerCase() === q.toLowerCase());
     });
 
-    renderMedicines(medicines, q);
+    renderMedicines(medicines, q, Number(data.total) || medicines.length);
     return medicines;
   }
 
@@ -347,7 +334,7 @@
     gridEl.append(moreBtn);
   }
 
-  function renderMedicines(medicines, query) {
+  function renderMedicines(medicines, query, total) {
     const summaryEl = document.getElementById('medicine-results-summary');
     const gridEl = document.getElementById('medicine-results-grid');
     if (!gridEl || !summaryEl) return;
@@ -364,9 +351,8 @@
       return;
     }
 
-    summaryEl.textContent = query
-      ? `${medicines.length} medicinali trovati per "${query}" con confronto automatico degli equivalenti AIFA.`
-      : `Visualizzati ${medicines.length} medicinali del prontuario AIFA con relativi farmaci equivalenti.`;
+    const shown = medicines.length < total ? `Primi ${medicines.length} di ${total} medicinali` : `${total} medicinali`;
+    summaryEl.textContent = query ? `${shown} per "${query}".` : `${shown}.`;
 
     gridEl.innerHTML = medicines
       .map((med) => {
@@ -385,7 +371,7 @@
                 <span class="badge badge-neutral">Nessun altro equivalente</span>
               </div>
               <p class="small-meta text-muted">
-                Non risultano altri medicinali con lo stesso principio attivo e dosaggio in elenco.
+                Non risultano altri medicinali con lo stesso principio attivo in elenco.
               </p>
             </div>
           `;
@@ -597,7 +583,7 @@
                   ${escapeHtml(p.address)} · ${escapeHtml(p.cap || '')} ${escapeHtml(p.comune)} (${escapeHtml(p.provincia)})
                 </p>
               </div>
-              <div style="display:flex;gap:0.35rem;flex-wrap:wrap;justify-content:flex-end;">
+              <div class="pharmacy-item-badges">
                 ${distanceHtml}
                 <span class="badge ${isParafarmacia ? 'badge-accent' : 'badge-success'}">
                   ${isParafarmacia ? 'Parafarmacia' : 'Farmacia'}
@@ -682,8 +668,12 @@
       const distanceText =
         typeof p.distance_km === 'number' ? `<br/><strong>Distanza:</strong> ${p.distance_km.toFixed(2)} km` : '';
 
-      const marker = window.L.marker([p.lat, p.lng], {
-        icon: createCustomIcon(p.type)
+      const marker = window.L.circleMarker([p.lat, p.lng], {
+        radius: 6,
+        color: '#ffffff',
+        weight: 1,
+        fillColor: p.type === 'parafarmacia' ? '#1d4ed8' : '#0f766e',
+        fillOpacity: 0.9
       }).bindPopup(`
         <div class="popup-title">${escapeHtml(p.name)}</div>
         <div class="popup-meta">
@@ -692,7 +682,7 @@
           ${distanceText}
         </div>
         <div class="popup-actions">
-          <a class="btn btn-sm btn-primary" style="color:#fff;" href="${escapeHtml(directionsUrl)}" target="_blank" rel="noopener noreferrer">
+          <a class="btn btn-sm btn-primary" href="${escapeHtml(directionsUrl)}" target="_blank" rel="noopener noreferrer">
             Indicazioni stradali ↗
           </a>
         </div>
