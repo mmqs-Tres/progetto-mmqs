@@ -1,0 +1,2058 @@
+[
+  {
+    "comune": "Accadia",
+    "comune_key": "ACCADIA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Accadia",
+    "district_code": "DSS-FG-ACC"
+  },
+  {
+    "comune": "Acquarica Del Capo",
+    "comune_key": "ACQUARICA DEL CAPO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Acquarica Del Capo",
+    "district_code": "DSS-LE-ACQ"
+  },
+  {
+    "comune": "Acquaviva Delle Fonti",
+    "comune_key": "ACQUAVIVA DELLE FONTI",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 11 - Acquaviva/Cassano/Sannicandro",
+    "district_code": "DSS-BA-11"
+  },
+  {
+    "comune": "Adelfia",
+    "comune_key": "ADELFIA",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 6 - Triggiano/Capurso/Valenzano",
+    "district_code": "DSS-BA-06"
+  },
+  {
+    "comune": "Alberobello",
+    "comune_key": "ALBEROBELLO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 9 - Castellana/Putignano/Noci/Locorotondo",
+    "district_code": "DSS-BA-09"
+  },
+  {
+    "comune": "Alberona",
+    "comune_key": "ALBERONA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Alberona",
+    "district_code": "DSS-FG-ALB"
+  },
+  {
+    "comune": "Alessano",
+    "comune_key": "ALESSANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Alessano",
+    "district_code": "DSS-LE-ALE"
+  },
+  {
+    "comune": "Alezio",
+    "comune_key": "ALEZIO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Alezio",
+    "district_code": "DSS-LE-ALE"
+  },
+  {
+    "comune": "Alliste",
+    "comune_key": "ALLISTE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Alliste",
+    "district_code": "DSS-LE-ALL"
+  },
+  {
+    "comune": "Altamura",
+    "comune_key": "ALTAMURA",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 12 - Altamura/Gravina/Santeramo",
+    "district_code": "DSS-BA-12"
+  },
+  {
+    "comune": "Andrano",
+    "comune_key": "ANDRANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Andrano",
+    "district_code": "DSS-LE-AND"
+  },
+  {
+    "comune": "Andria",
+    "comune_key": "ANDRIA",
+    "provincia": "BT",
+    "asl_name": "ASL BT",
+    "district_name": "Distretto 2 - Andria/Minervino/Spinazzola",
+    "district_code": "DSS-BT-02"
+  },
+  {
+    "comune": "Anzano Di Puglia",
+    "comune_key": "ANZANO DI PUGLIA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Anzano Di Puglia",
+    "district_code": "DSS-FG-ANZ"
+  },
+  {
+    "comune": "Apricena",
+    "comune_key": "APRICENA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 2 - San Severo/Torremaggiore/Apricena",
+    "district_code": "DSS-FG-02"
+  },
+  {
+    "comune": "Aradeo",
+    "comune_key": "ARADEO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Galatina",
+    "district_code": "DSS-LE-04"
+  },
+  {
+    "comune": "Arnesano",
+    "comune_key": "ARNESANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Arnesano",
+    "district_code": "DSS-LE-ARN"
+  },
+  {
+    "comune": "Ascoli Satriano",
+    "comune_key": "ASCOLI SATRIANO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 7 - Subappennino Dauno Sud/Troia",
+    "district_code": "DSS-FG-07"
+  },
+  {
+    "comune": "Avetrana",
+    "comune_key": "AVETRANA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 3 - Manduria/Avetrana/Sava/Maruggio",
+    "district_code": "DSS-TA-03"
+  },
+  {
+    "comune": "Bagnolo Del Salento",
+    "comune_key": "BAGNOLO DEL SALENTO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Bagnolo Del Salento",
+    "district_code": "DSS-LE-BAG"
+  },
+  {
+    "comune": "Bari",
+    "comune_key": "BARI",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto Unico di Bari",
+    "district_code": "DSS-BA-05"
+  },
+  {
+    "comune": "Barletta",
+    "comune_key": "BARLETTA",
+    "provincia": "BT",
+    "asl_name": "ASL BT",
+    "district_name": "Distretto 4 - Barletta",
+    "district_code": "DSS-BT-04"
+  },
+  {
+    "comune": "Biccari",
+    "comune_key": "BICCARI",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Biccari",
+    "district_code": "DSS-FG-BIC"
+  },
+  {
+    "comune": "Binetto",
+    "comune_key": "BINETTO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 13 - Grumo Appula/Binetto/Toritto",
+    "district_code": "DSS-BA-13"
+  },
+  {
+    "comune": "Bisceglie",
+    "comune_key": "BISCEGLIE",
+    "provincia": "BT",
+    "asl_name": "ASL BT",
+    "district_name": "Distretto 5 - Trani/Bisceglie",
+    "district_code": "DSS-BT-05"
+  },
+  {
+    "comune": "Bitetto",
+    "comune_key": "BITETTO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 4 - Modugno/Bitetto/Bitritto",
+    "district_code": "DSS-BA-04"
+  },
+  {
+    "comune": "Bitonto",
+    "comune_key": "BITONTO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 3 - Bitonto/Palo del Colle",
+    "district_code": "DSS-BA-03"
+  },
+  {
+    "comune": "Bitritto",
+    "comune_key": "BITRITTO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 4 - Modugno/Bitetto/Bitritto",
+    "district_code": "DSS-BA-04"
+  },
+  {
+    "comune": "Botrugno",
+    "comune_key": "BOTRUGNO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Botrugno",
+    "district_code": "DSS-LE-BOT"
+  },
+  {
+    "comune": "Bovino",
+    "comune_key": "BOVINO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 7 - Subappennino Dauno Sud/Troia",
+    "district_code": "DSS-FG-07"
+  },
+  {
+    "comune": "Brindisi",
+    "comune_key": "BRINDISI",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 1 - Brindisi/San Vito dei Normanni",
+    "district_code": "DSS-BR-01"
+  },
+  {
+    "comune": "Cagnano Varano",
+    "comune_key": "CAGNANO VARANO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 4 - Gargano Nord",
+    "district_code": "DSS-FG-04"
+  },
+  {
+    "comune": "Calimera",
+    "comune_key": "CALIMERA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Calimera",
+    "district_code": "DSS-LE-CAL"
+  },
+  {
+    "comune": "Campi Salentina",
+    "comune_key": "CAMPI SALENTINA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Campi Salentina",
+    "district_code": "DSS-LE-02"
+  },
+  {
+    "comune": "Candela",
+    "comune_key": "CANDELA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Candela",
+    "district_code": "DSS-FG-CAN"
+  },
+  {
+    "comune": "Cannole",
+    "comune_key": "CANNOLE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Cannole",
+    "district_code": "DSS-LE-CAN"
+  },
+  {
+    "comune": "Canosa Di Puglia",
+    "comune_key": "CANOSA DI PUGLIA",
+    "provincia": "BT",
+    "asl_name": "ASL BT",
+    "district_name": "Distretto 3 - Canosa di Puglia",
+    "district_code": "DSS-BT-03"
+  },
+  {
+    "comune": "Caprarica Di Lecce",
+    "comune_key": "CAPRARICA DI LECCE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Caprarica Di Lecce",
+    "district_code": "DSS-LE-CAP"
+  },
+  {
+    "comune": "Capurso",
+    "comune_key": "CAPURSO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 6 - Triggiano/Capurso/Valenzano",
+    "district_code": "DSS-BA-06"
+  },
+  {
+    "comune": "Carapelle",
+    "comune_key": "CARAPELLE",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 5 - Cerignola e Reali Siti",
+    "district_code": "DSS-FG-05"
+  },
+  {
+    "comune": "Carlantino",
+    "comune_key": "CARLANTINO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Carlantino",
+    "district_code": "DSS-FG-CAR"
+  },
+  {
+    "comune": "Carmiano",
+    "comune_key": "CARMIANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Campi Salentina",
+    "district_code": "DSS-LE-02"
+  },
+  {
+    "comune": "Carosino",
+    "comune_key": "CAROSINO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto Socio Sanitario Carosino",
+    "district_code": "DSS-TA-CAR"
+  },
+  {
+    "comune": "Carovigno",
+    "comune_key": "CAROVIGNO",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 2 - Fasano/Ostuni/Cisternino",
+    "district_code": "DSS-BR-02"
+  },
+  {
+    "comune": "Carpignano Salentino",
+    "comune_key": "CARPIGNANO SALENTINO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Carpignano Salentino",
+    "district_code": "DSS-LE-CAR"
+  },
+  {
+    "comune": "Carpino",
+    "comune_key": "CARPINO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 4 - Gargano Nord",
+    "district_code": "DSS-FG-04"
+  },
+  {
+    "comune": "Casalnuovo Monterotaro",
+    "comune_key": "CASALNUOVO MONTEROTARO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Casalnuovo Monterotaro",
+    "district_code": "DSS-FG-CAS"
+  },
+  {
+    "comune": "Casalvecchio Di Puglia",
+    "comune_key": "CASALVECCHIO DI PUGLIA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Casalvecchio Di Puglia",
+    "district_code": "DSS-FG-CAS"
+  },
+  {
+    "comune": "Casamassima",
+    "comune_key": "CASAMASSIMA",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 10 - Gioia del Colle/Casamassima/Turi",
+    "district_code": "DSS-BA-10"
+  },
+  {
+    "comune": "Casarano",
+    "comune_key": "CASARANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Casarano",
+    "district_code": "DSS-LE-07"
+  },
+  {
+    "comune": "Cassano Delle Murge",
+    "comune_key": "CASSANO DELLE MURGE",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 11 - Acquaviva/Cassano/Sannicandro",
+    "district_code": "DSS-BA-11"
+  },
+  {
+    "comune": "Castellana Grotte",
+    "comune_key": "CASTELLANA GROTTE",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 9 - Castellana/Putignano/Noci/Locorotondo",
+    "district_code": "DSS-BA-09"
+  },
+  {
+    "comune": "Castellaneta",
+    "comune_key": "CASTELLANETA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 5 - Castellaneta/Ginosa/Laterza",
+    "district_code": "DSS-TA-05"
+  },
+  {
+    "comune": "Castelluccio Dei Sauri",
+    "comune_key": "CASTELLUCCIO DEI SAURI",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Castelluccio Dei Sauri",
+    "district_code": "DSS-FG-CAS"
+  },
+  {
+    "comune": "Castelluccio Valmaggiore",
+    "comune_key": "CASTELLUCCIO VALMAGGIORE",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Castelluccio Valmaggiore",
+    "district_code": "DSS-FG-CAS"
+  },
+  {
+    "comune": "Castelnuovo Della Daunia",
+    "comune_key": "CASTELNUOVO DELLA DAUNIA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Castelnuovo Della Daunia",
+    "district_code": "DSS-FG-CAS"
+  },
+  {
+    "comune": "Castri Di Lecce",
+    "comune_key": "CASTRI DI LECCE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Castri Di Lecce",
+    "district_code": "DSS-LE-CAS"
+  },
+  {
+    "comune": "Castrignano De' Greci",
+    "comune_key": "CASTRIGNANO DE' GRECI",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Castrignano De' Greci",
+    "district_code": "DSS-LE-CAS"
+  },
+  {
+    "comune": "Castrignano Del Capo",
+    "comune_key": "CASTRIGNANO DEL CAPO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Castrignano Del Capo",
+    "district_code": "DSS-LE-CAS"
+  },
+  {
+    "comune": "Castro",
+    "comune_key": "CASTRO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Castro",
+    "district_code": "DSS-LE-CAS"
+  },
+  {
+    "comune": "Cavallino",
+    "comune_key": "CAVALLINO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Lecce",
+    "district_code": "DSS-LE-01"
+  },
+  {
+    "comune": "Ceglie Messapica",
+    "comune_key": "CEGLIE MESSAPICA",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 3 - Francavilla Fontana/Oria/Ceglie",
+    "district_code": "DSS-BR-03"
+  },
+  {
+    "comune": "Celenza Valfortore",
+    "comune_key": "CELENZA VALFORTORE",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Celenza Valfortore",
+    "district_code": "DSS-FG-CEL"
+  },
+  {
+    "comune": "Cellamare",
+    "comune_key": "CELLAMARE",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 6 - Triggiano/Capurso/Valenzano",
+    "district_code": "DSS-BA-06"
+  },
+  {
+    "comune": "Celle Di San Vito",
+    "comune_key": "CELLE DI SAN VITO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Celle Di San Vito",
+    "district_code": "DSS-FG-CEL"
+  },
+  {
+    "comune": "Cellino San Marco",
+    "comune_key": "CELLINO SAN MARCO",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 4 - Mesagne/Latiano/San Pietro",
+    "district_code": "DSS-BR-04"
+  },
+  {
+    "comune": "Cerignola",
+    "comune_key": "CERIGNOLA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 5 - Cerignola e Reali Siti",
+    "district_code": "DSS-FG-05"
+  },
+  {
+    "comune": "Chieuti",
+    "comune_key": "CHIEUTI",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 2 - San Severo/Torremaggiore/Apricena",
+    "district_code": "DSS-FG-02"
+  },
+  {
+    "comune": "Cisternino",
+    "comune_key": "CISTERNINO",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 2 - Fasano/Ostuni/Cisternino",
+    "district_code": "DSS-BR-02"
+  },
+  {
+    "comune": "Collepasso",
+    "comune_key": "COLLEPASSO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Collepasso",
+    "district_code": "DSS-LE-COL"
+  },
+  {
+    "comune": "Conversano",
+    "comune_key": "CONVERSANO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 8 - Conversano/Monopoli/Polignano",
+    "district_code": "DSS-BA-08"
+  },
+  {
+    "comune": "Copertino",
+    "comune_key": "COPERTINO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Nardò",
+    "district_code": "DSS-LE-03"
+  },
+  {
+    "comune": "Corato",
+    "comune_key": "CORATO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 1 - Corato/Ruvo/Terlizzi",
+    "district_code": "DSS-BA-01"
+  },
+  {
+    "comune": "Corigliano D'otranto",
+    "comune_key": "CORIGLIANO D'OTRANTO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Corigliano D'otranto",
+    "district_code": "DSS-LE-COR"
+  },
+  {
+    "comune": "Corsano",
+    "comune_key": "CORSANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Corsano",
+    "district_code": "DSS-LE-COR"
+  },
+  {
+    "comune": "Crispiano",
+    "comune_key": "CRISPIANO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 6 - Martina Franca/Crispiano",
+    "district_code": "DSS-TA-06"
+  },
+  {
+    "comune": "Cursi",
+    "comune_key": "CURSI",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Cursi",
+    "district_code": "DSS-LE-CUR"
+  },
+  {
+    "comune": "Cutrofiano",
+    "comune_key": "CUTROFIANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Cutrofiano",
+    "district_code": "DSS-LE-CUT"
+  },
+  {
+    "comune": "Deliceto",
+    "comune_key": "DELICETO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Deliceto",
+    "district_code": "DSS-FG-DEL"
+  },
+  {
+    "comune": "Diso",
+    "comune_key": "DISO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Diso",
+    "district_code": "DSS-LE-DIS"
+  },
+  {
+    "comune": "Erchie",
+    "comune_key": "ERCHIE",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 4 - Mesagne/Latiano/San Pietro",
+    "district_code": "DSS-BR-04"
+  },
+  {
+    "comune": "Faeto",
+    "comune_key": "FAETO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Faeto",
+    "district_code": "DSS-FG-FAE"
+  },
+  {
+    "comune": "Faggiano",
+    "comune_key": "FAGGIANO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto Socio Sanitario Faggiano",
+    "district_code": "DSS-TA-FAG"
+  },
+  {
+    "comune": "Fasano",
+    "comune_key": "FASANO",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 2 - Fasano/Ostuni/Cisternino",
+    "district_code": "DSS-BR-02"
+  },
+  {
+    "comune": "Foggia",
+    "comune_key": "FOGGIA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 1 - Foggia",
+    "district_code": "DSS-FG-01"
+  },
+  {
+    "comune": "Fragagnano",
+    "comune_key": "FRAGAGNANO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto Socio Sanitario Fragagnano",
+    "district_code": "DSS-TA-FRA"
+  },
+  {
+    "comune": "Francavilla Fontana",
+    "comune_key": "FRANCAVILLA FONTANA",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 3 - Francavilla Fontana/Oria/Ceglie",
+    "district_code": "DSS-BR-03"
+  },
+  {
+    "comune": "Gagliano Del Capo",
+    "comune_key": "GAGLIANO DEL CAPO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Gagliano Del Capo",
+    "district_code": "DSS-LE-GAG"
+  },
+  {
+    "comune": "Galatina",
+    "comune_key": "GALATINA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Galatina",
+    "district_code": "DSS-LE-04"
+  },
+  {
+    "comune": "Galatone",
+    "comune_key": "GALATONE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Nardò",
+    "district_code": "DSS-LE-03"
+  },
+  {
+    "comune": "Gallipoli",
+    "comune_key": "GALLIPOLI",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Gallipoli",
+    "district_code": "DSS-LE-06"
+  },
+  {
+    "comune": "Ginosa",
+    "comune_key": "GINOSA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 5 - Castellaneta/Ginosa/Laterza",
+    "district_code": "DSS-TA-05"
+  },
+  {
+    "comune": "Gioia Del Colle",
+    "comune_key": "GIOIA DEL COLLE",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 10 - Gioia del Colle/Casamassima/Turi",
+    "district_code": "DSS-BA-10"
+  },
+  {
+    "comune": "Giovinazzo",
+    "comune_key": "GIOVINAZZO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 2 - Molfetta/Giovinazzo",
+    "district_code": "DSS-BA-02"
+  },
+  {
+    "comune": "Giuggianello",
+    "comune_key": "GIUGGIANELLO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Giuggianello",
+    "district_code": "DSS-LE-GIU"
+  },
+  {
+    "comune": "Giurdignano",
+    "comune_key": "GIURDIGNANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Giurdignano",
+    "district_code": "DSS-LE-GIU"
+  },
+  {
+    "comune": "Gravina In Puglia",
+    "comune_key": "GRAVINA IN PUGLIA",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 12 - Altamura/Gravina/Santeramo",
+    "district_code": "DSS-BA-12"
+  },
+  {
+    "comune": "Grottaglie",
+    "comune_key": "GROTTAGLIE",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 4 - Grottaglie e Versante Orientale",
+    "district_code": "DSS-TA-04"
+  },
+  {
+    "comune": "Grumo Appula",
+    "comune_key": "GRUMO APPULA",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 13 - Grumo Appula/Binetto/Toritto",
+    "district_code": "DSS-BA-13"
+  },
+  {
+    "comune": "Guagnano",
+    "comune_key": "GUAGNANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Guagnano",
+    "district_code": "DSS-LE-GUA"
+  },
+  {
+    "comune": "Ischitella",
+    "comune_key": "ISCHITELLA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 4 - Gargano Nord",
+    "district_code": "DSS-FG-04"
+  },
+  {
+    "comune": "Isole Tremiti",
+    "comune_key": "ISOLE TREMITI",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Isole Tremiti",
+    "district_code": "DSS-FG-ISO"
+  },
+  {
+    "comune": "Laterza",
+    "comune_key": "LATERZA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 5 - Castellaneta/Ginosa/Laterza",
+    "district_code": "DSS-TA-05"
+  },
+  {
+    "comune": "Latiano",
+    "comune_key": "LATIANO",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 4 - Mesagne/Latiano/San Pietro",
+    "district_code": "DSS-BR-04"
+  },
+  {
+    "comune": "Lecce",
+    "comune_key": "LECCE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Lecce",
+    "district_code": "DSS-LE-01"
+  },
+  {
+    "comune": "Leporano",
+    "comune_key": "LEPORANO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 4 - Grottaglie e Versante Orientale",
+    "district_code": "DSS-TA-04"
+  },
+  {
+    "comune": "Lequile",
+    "comune_key": "LEQUILE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Lequile",
+    "district_code": "DSS-LE-LEQ"
+  },
+  {
+    "comune": "Lesina",
+    "comune_key": "LESINA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 2 - San Severo/Torremaggiore/Apricena",
+    "district_code": "DSS-FG-02"
+  },
+  {
+    "comune": "Leverano",
+    "comune_key": "LEVERANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Nardò",
+    "district_code": "DSS-LE-03"
+  },
+  {
+    "comune": "Lizzanello",
+    "comune_key": "LIZZANELLO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Lecce",
+    "district_code": "DSS-LE-01"
+  },
+  {
+    "comune": "Lizzano",
+    "comune_key": "LIZZANO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 3 - Manduria/Avetrana/Sava/Maruggio",
+    "district_code": "DSS-TA-03"
+  },
+  {
+    "comune": "Locorotondo",
+    "comune_key": "LOCOROTONDO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 9 - Castellana/Putignano/Noci/Locorotondo",
+    "district_code": "DSS-BA-09"
+  },
+  {
+    "comune": "Lucera",
+    "comune_key": "LUCERA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 6 - Subappennino Dauno Nord/Lucera",
+    "district_code": "DSS-FG-06"
+  },
+  {
+    "comune": "Maglie",
+    "comune_key": "MAGLIE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Maglie",
+    "district_code": "DSS-LE-05"
+  },
+  {
+    "comune": "Manduria",
+    "comune_key": "MANDURIA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 3 - Manduria/Avetrana/Sava/Maruggio",
+    "district_code": "DSS-TA-03"
+  },
+  {
+    "comune": "Manfredonia",
+    "comune_key": "MANFREDONIA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 3 - Manfredonia/Monte Sant'Angelo",
+    "district_code": "DSS-FG-03"
+  },
+  {
+    "comune": "Margherita Di Savoia",
+    "comune_key": "MARGHERITA DI SAVOIA",
+    "provincia": "BT",
+    "asl_name": "ASL BT",
+    "district_name": "Distretto 1 - Margherita/S.Ferdinando/Trinitapoli",
+    "district_code": "DSS-BT-01"
+  },
+  {
+    "comune": "Martano",
+    "comune_key": "MARTANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Martano",
+    "district_code": "DSS-LE-MAR"
+  },
+  {
+    "comune": "Martignano",
+    "comune_key": "MARTIGNANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Martignano",
+    "district_code": "DSS-LE-MAR"
+  },
+  {
+    "comune": "Martina Franca",
+    "comune_key": "MARTINA FRANCA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 6 - Martina Franca/Crispiano",
+    "district_code": "DSS-TA-06"
+  },
+  {
+    "comune": "Maruggio",
+    "comune_key": "MARUGGIO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 3 - Manduria/Avetrana/Sava/Maruggio",
+    "district_code": "DSS-TA-03"
+  },
+  {
+    "comune": "Massafra",
+    "comune_key": "MASSAFRA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 2 - Massafra/Mottola/Palagiano/Statte",
+    "district_code": "DSS-TA-02"
+  },
+  {
+    "comune": "Matino",
+    "comune_key": "MATINO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Casarano",
+    "district_code": "DSS-LE-07"
+  },
+  {
+    "comune": "Mattinata",
+    "comune_key": "MATTINATA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 3 - Manfredonia/Monte Sant'Angelo",
+    "district_code": "DSS-FG-03"
+  },
+  {
+    "comune": "Melendugno",
+    "comune_key": "MELENDUGNO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Melendugno",
+    "district_code": "DSS-LE-MEL"
+  },
+  {
+    "comune": "Melissano",
+    "comune_key": "MELISSANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Melissano",
+    "district_code": "DSS-LE-MEL"
+  },
+  {
+    "comune": "Melpignano",
+    "comune_key": "MELPIGNANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Melpignano",
+    "district_code": "DSS-LE-MEL"
+  },
+  {
+    "comune": "Mesagne",
+    "comune_key": "MESAGNE",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 4 - Mesagne/Latiano/San Pietro",
+    "district_code": "DSS-BR-04"
+  },
+  {
+    "comune": "Miggiano",
+    "comune_key": "MIGGIANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Miggiano",
+    "district_code": "DSS-LE-MIG"
+  },
+  {
+    "comune": "Minervino Di Lecce",
+    "comune_key": "MINERVINO DI LECCE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Minervino Di Lecce",
+    "district_code": "DSS-LE-MIN"
+  },
+  {
+    "comune": "Minervino Murge",
+    "comune_key": "MINERVINO MURGE",
+    "provincia": "BT",
+    "asl_name": "ASL BT",
+    "district_name": "Distretto 2 - Andria/Minervino/Spinazzola",
+    "district_code": "DSS-BT-02"
+  },
+  {
+    "comune": "Modugno",
+    "comune_key": "MODUGNO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 4 - Modugno/Bitetto/Bitritto",
+    "district_code": "DSS-BA-04"
+  },
+  {
+    "comune": "Mola Di Bari",
+    "comune_key": "MOLA DI BARI",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 7 - Noicattaro/Rutigliano/Mola",
+    "district_code": "DSS-BA-07"
+  },
+  {
+    "comune": "Molfetta",
+    "comune_key": "MOLFETTA",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 2 - Molfetta/Giovinazzo",
+    "district_code": "DSS-BA-02"
+  },
+  {
+    "comune": "Monopoli",
+    "comune_key": "MONOPOLI",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 8 - Conversano/Monopoli/Polignano",
+    "district_code": "DSS-BA-08"
+  },
+  {
+    "comune": "Monte Sant'angelo",
+    "comune_key": "MONTE SANT'ANGELO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 3 - Manfredonia/Monte Sant'Angelo",
+    "district_code": "DSS-FG-03"
+  },
+  {
+    "comune": "Monteiasi",
+    "comune_key": "MONTEIASI",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto Socio Sanitario Monteiasi",
+    "district_code": "DSS-TA-MON"
+  },
+  {
+    "comune": "Monteleone Di Puglia",
+    "comune_key": "MONTELEONE DI PUGLIA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Monteleone Di Puglia",
+    "district_code": "DSS-FG-MON"
+  },
+  {
+    "comune": "Montemesola",
+    "comune_key": "MONTEMESOLA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto Socio Sanitario Montemesola",
+    "district_code": "DSS-TA-MON"
+  },
+  {
+    "comune": "Monteparano",
+    "comune_key": "MONTEPARANO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto Socio Sanitario Monteparano",
+    "district_code": "DSS-TA-MON"
+  },
+  {
+    "comune": "Monteroni Di Lecce",
+    "comune_key": "MONTERONI DI LECCE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Lecce",
+    "district_code": "DSS-LE-01"
+  },
+  {
+    "comune": "Montesano Salentino",
+    "comune_key": "MONTESANO SALENTINO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Montesano Salentino",
+    "district_code": "DSS-LE-MON"
+  },
+  {
+    "comune": "Morciano Di Leuca",
+    "comune_key": "MORCIANO DI LEUCA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Morciano Di Leuca",
+    "district_code": "DSS-LE-MOR"
+  },
+  {
+    "comune": "Motta Montecorvino",
+    "comune_key": "MOTTA MONTECORVINO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Motta Montecorvino",
+    "district_code": "DSS-FG-MOT"
+  },
+  {
+    "comune": "Mottola",
+    "comune_key": "MOTTOLA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 2 - Massafra/Mottola/Palagiano/Statte",
+    "district_code": "DSS-TA-02"
+  },
+  {
+    "comune": "Muro Leccese",
+    "comune_key": "MURO LECCESE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Muro Leccese",
+    "district_code": "DSS-LE-MUR"
+  },
+  {
+    "comune": "Nardo'",
+    "comune_key": "NARDO'",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Nardò",
+    "district_code": "DSS-LE-03"
+  },
+  {
+    "comune": "Neviano",
+    "comune_key": "NEVIANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Neviano",
+    "district_code": "DSS-LE-NEV"
+  },
+  {
+    "comune": "Noci",
+    "comune_key": "NOCI",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 9 - Castellana/Putignano/Noci/Locorotondo",
+    "district_code": "DSS-BA-09"
+  },
+  {
+    "comune": "Nociglia",
+    "comune_key": "NOCIGLIA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Nociglia",
+    "district_code": "DSS-LE-NOC"
+  },
+  {
+    "comune": "Noicattaro",
+    "comune_key": "NOICATTARO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 7 - Noicattaro/Rutigliano/Mola",
+    "district_code": "DSS-BA-07"
+  },
+  {
+    "comune": "Novoli",
+    "comune_key": "NOVOLI",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Campi Salentina",
+    "district_code": "DSS-LE-02"
+  },
+  {
+    "comune": "Ordona",
+    "comune_key": "ORDONA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 5 - Cerignola e Reali Siti",
+    "district_code": "DSS-FG-05"
+  },
+  {
+    "comune": "Oria",
+    "comune_key": "ORIA",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 3 - Francavilla Fontana/Oria/Ceglie",
+    "district_code": "DSS-BR-03"
+  },
+  {
+    "comune": "Orsara Di Puglia",
+    "comune_key": "ORSARA DI PUGLIA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Orsara Di Puglia",
+    "district_code": "DSS-FG-ORS"
+  },
+  {
+    "comune": "Orta Nova",
+    "comune_key": "ORTA NOVA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 5 - Cerignola e Reali Siti",
+    "district_code": "DSS-FG-05"
+  },
+  {
+    "comune": "Ortelle",
+    "comune_key": "ORTELLE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Ortelle",
+    "district_code": "DSS-LE-ORT"
+  },
+  {
+    "comune": "Ostuni",
+    "comune_key": "OSTUNI",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 2 - Fasano/Ostuni/Cisternino",
+    "district_code": "DSS-BR-02"
+  },
+  {
+    "comune": "Otranto",
+    "comune_key": "OTRANTO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Maglie",
+    "district_code": "DSS-LE-05"
+  },
+  {
+    "comune": "Palagianello",
+    "comune_key": "PALAGIANELLO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto Socio Sanitario Palagianello",
+    "district_code": "DSS-TA-PAL"
+  },
+  {
+    "comune": "Palagiano",
+    "comune_key": "PALAGIANO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 2 - Massafra/Mottola/Palagiano/Statte",
+    "district_code": "DSS-TA-02"
+  },
+  {
+    "comune": "Palmariggi",
+    "comune_key": "PALMARIGGI",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Palmariggi",
+    "district_code": "DSS-LE-PAL"
+  },
+  {
+    "comune": "Palo Del Colle",
+    "comune_key": "PALO DEL COLLE",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 3 - Bitonto/Palo del Colle",
+    "district_code": "DSS-BA-03"
+  },
+  {
+    "comune": "Panni",
+    "comune_key": "PANNI",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Panni",
+    "district_code": "DSS-FG-PAN"
+  },
+  {
+    "comune": "Parabita",
+    "comune_key": "PARABITA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Parabita",
+    "district_code": "DSS-LE-PAR"
+  },
+  {
+    "comune": "Patu'",
+    "comune_key": "PATU'",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Patu'",
+    "district_code": "DSS-LE-PAT"
+  },
+  {
+    "comune": "Peschici",
+    "comune_key": "PESCHICI",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 4 - Gargano Nord",
+    "district_code": "DSS-FG-04"
+  },
+  {
+    "comune": "Pietramontecorvino",
+    "comune_key": "PIETRAMONTECORVINO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Pietramontecorvino",
+    "district_code": "DSS-FG-PIE"
+  },
+  {
+    "comune": "Poggiardo",
+    "comune_key": "POGGIARDO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Poggiardo",
+    "district_code": "DSS-LE-POG"
+  },
+  {
+    "comune": "Poggio Imperiale",
+    "comune_key": "POGGIO IMPERIALE",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 2 - San Severo/Torremaggiore/Apricena",
+    "district_code": "DSS-FG-02"
+  },
+  {
+    "comune": "Poggiorsini",
+    "comune_key": "POGGIORSINI",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 12 - Altamura/Gravina/Santeramo",
+    "district_code": "DSS-BA-12"
+  },
+  {
+    "comune": "Polignano A Mare",
+    "comune_key": "POLIGNANO A MARE",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 8 - Conversano/Monopoli/Polignano",
+    "district_code": "DSS-BA-08"
+  },
+  {
+    "comune": "Porto Cesareo",
+    "comune_key": "PORTO CESAREO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Nardò",
+    "district_code": "DSS-LE-03"
+  },
+  {
+    "comune": "Presicce",
+    "comune_key": "PRESICCE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Presicce",
+    "district_code": "DSS-LE-PRE"
+  },
+  {
+    "comune": "Pulsano",
+    "comune_key": "PULSANO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 4 - Grottaglie e Versante Orientale",
+    "district_code": "DSS-TA-04"
+  },
+  {
+    "comune": "Putignano",
+    "comune_key": "PUTIGNANO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 9 - Castellana/Putignano/Noci/Locorotondo",
+    "district_code": "DSS-BA-09"
+  },
+  {
+    "comune": "Racale",
+    "comune_key": "RACALE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Ugento",
+    "district_code": "DSS-LE-09"
+  },
+  {
+    "comune": "Rignano Garganico",
+    "comune_key": "RIGNANO GARGANICO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Rignano Garganico",
+    "district_code": "DSS-FG-RIG"
+  },
+  {
+    "comune": "Roccaforzata",
+    "comune_key": "ROCCAFORZATA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto Socio Sanitario Roccaforzata",
+    "district_code": "DSS-TA-ROC"
+  },
+  {
+    "comune": "Rocchetta Sant'antonio",
+    "comune_key": "ROCCHETTA SANT'ANTONIO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Rocchetta Sant'antonio",
+    "district_code": "DSS-FG-ROC"
+  },
+  {
+    "comune": "Rodi Garganico",
+    "comune_key": "RODI GARGANICO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 4 - Gargano Nord",
+    "district_code": "DSS-FG-04"
+  },
+  {
+    "comune": "Roseto Valfortore",
+    "comune_key": "ROSETO VALFORTORE",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Roseto Valfortore",
+    "district_code": "DSS-FG-ROS"
+  },
+  {
+    "comune": "Ruffano",
+    "comune_key": "RUFFANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Ruffano",
+    "district_code": "DSS-LE-RUF"
+  },
+  {
+    "comune": "Rutigliano",
+    "comune_key": "RUTIGLIANO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 7 - Noicattaro/Rutigliano/Mola",
+    "district_code": "DSS-BA-07"
+  },
+  {
+    "comune": "Ruvo Di Puglia",
+    "comune_key": "RUVO DI PUGLIA",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 1 - Corato/Ruvo/Terlizzi",
+    "district_code": "DSS-BA-01"
+  },
+  {
+    "comune": "Salice Salentino",
+    "comune_key": "SALICE SALENTINO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Salice Salentino",
+    "district_code": "DSS-LE-SAL"
+  },
+  {
+    "comune": "Salve",
+    "comune_key": "SALVE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Salve",
+    "district_code": "DSS-LE-SAL"
+  },
+  {
+    "comune": "Sammichele Di Bari",
+    "comune_key": "SAMMICHELE DI BARI",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 10 - Gioia del Colle/Casamassima/Turi",
+    "district_code": "DSS-BA-10"
+  },
+  {
+    "comune": "San Cassiano",
+    "comune_key": "SAN CASSIANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario San Cassiano",
+    "district_code": "DSS-LE-SAN"
+  },
+  {
+    "comune": "San Cesario Di Lecce",
+    "comune_key": "SAN CESARIO DI LECCE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario San Cesario Di Lecce",
+    "district_code": "DSS-LE-SAN"
+  },
+  {
+    "comune": "San Donaci",
+    "comune_key": "SAN DONACI",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 4 - Mesagne/Latiano/San Pietro",
+    "district_code": "DSS-BR-04"
+  },
+  {
+    "comune": "San Donato Di Lecce",
+    "comune_key": "SAN DONATO DI LECCE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario San Donato Di Lecce",
+    "district_code": "DSS-LE-SAN"
+  },
+  {
+    "comune": "San Ferdinando Di Puglia",
+    "comune_key": "SAN FERDINANDO DI PUGLIA",
+    "provincia": "BT",
+    "asl_name": "ASL BT",
+    "district_name": "Distretto 1 - Margherita/S.Ferdinando/Trinitapoli",
+    "district_code": "DSS-BT-01"
+  },
+  {
+    "comune": "San Giorgio Ionico",
+    "comune_key": "SAN GIORGIO IONICO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 4 - Grottaglie e Versante Orientale",
+    "district_code": "DSS-TA-04"
+  },
+  {
+    "comune": "San Giovanni Rotondo",
+    "comune_key": "SAN GIOVANNI ROTONDO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 3 - San Giovanni Rotondo/San Marco in Lamis",
+    "district_code": "DSS-FG-03"
+  },
+  {
+    "comune": "San Marco In Lamis",
+    "comune_key": "SAN MARCO IN LAMIS",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 3 - San Giovanni Rotondo/San Marco in Lamis",
+    "district_code": "DSS-FG-03"
+  },
+  {
+    "comune": "San Marco La Catola",
+    "comune_key": "SAN MARCO LA CATOLA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario San Marco La Catola",
+    "district_code": "DSS-FG-SAN"
+  },
+  {
+    "comune": "San Marzano Di San Giuseppe",
+    "comune_key": "SAN MARZANO DI SAN GIUSEPPE",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto Socio Sanitario San Marzano Di San Giuseppe",
+    "district_code": "DSS-TA-SAN"
+  },
+  {
+    "comune": "San Michele Salentino",
+    "comune_key": "SAN MICHELE SALENTINO",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto Socio Sanitario San Michele Salentino",
+    "district_code": "DSS-BR-SAN"
+  },
+  {
+    "comune": "San Pancrazio Salentino",
+    "comune_key": "SAN PANCRAZIO SALENTINO",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 4 - Mesagne/Latiano/San Pietro",
+    "district_code": "DSS-BR-04"
+  },
+  {
+    "comune": "San Paolo Di Civitate",
+    "comune_key": "SAN PAOLO DI CIVITATE",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 2 - San Severo/Torremaggiore/Apricena",
+    "district_code": "DSS-FG-02"
+  },
+  {
+    "comune": "San Pietro In Lama",
+    "comune_key": "SAN PIETRO IN LAMA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario San Pietro In Lama",
+    "district_code": "DSS-LE-SAN"
+  },
+  {
+    "comune": "San Pietro Vernotico",
+    "comune_key": "SAN PIETRO VERNOTICO",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto Socio Sanitario San Pietro Vernotico",
+    "district_code": "DSS-BR-SAN"
+  },
+  {
+    "comune": "San Severo",
+    "comune_key": "SAN SEVERO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 2 - San Severo/Torremaggiore/Apricena",
+    "district_code": "DSS-FG-02"
+  },
+  {
+    "comune": "San Vito Dei Normanni",
+    "comune_key": "SAN VITO DEI NORMANNI",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 1 - Brindisi/San Vito dei Normanni",
+    "district_code": "DSS-BR-01"
+  },
+  {
+    "comune": "Sanarica",
+    "comune_key": "SANARICA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Sanarica",
+    "district_code": "DSS-LE-SAN"
+  },
+  {
+    "comune": "Sannicandro Di Bari",
+    "comune_key": "SANNICANDRO DI BARI",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 11 - Acquaviva/Cassano/Sannicandro",
+    "district_code": "DSS-BA-11"
+  },
+  {
+    "comune": "Sannicandro Garganico",
+    "comune_key": "SANNICANDRO GARGANICO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Sannicandro Garganico",
+    "district_code": "DSS-FG-SAN"
+  },
+  {
+    "comune": "Sannicola",
+    "comune_key": "SANNICOLA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Sannicola",
+    "district_code": "DSS-LE-SAN"
+  },
+  {
+    "comune": "Sant'agata Di Puglia",
+    "comune_key": "SANT'AGATA DI PUGLIA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Sant'agata Di Puglia",
+    "district_code": "DSS-FG-SAN"
+  },
+  {
+    "comune": "Santa Cesarea Terme",
+    "comune_key": "SANTA CESAREA TERME",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Santa Cesarea Terme",
+    "district_code": "DSS-LE-SAN"
+  },
+  {
+    "comune": "Santeramo In Colle",
+    "comune_key": "SANTERAMO IN COLLE",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 12 - Altamura/Gravina/Santeramo",
+    "district_code": "DSS-BA-12"
+  },
+  {
+    "comune": "Sava",
+    "comune_key": "SAVA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 3 - Manduria/Avetrana/Sava/Maruggio",
+    "district_code": "DSS-TA-03"
+  },
+  {
+    "comune": "Scorrano",
+    "comune_key": "SCORRANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Scorrano",
+    "district_code": "DSS-LE-SCO"
+  },
+  {
+    "comune": "Secli'",
+    "comune_key": "SECLI'",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Secli'",
+    "district_code": "DSS-LE-SEC"
+  },
+  {
+    "comune": "Serracapriola",
+    "comune_key": "SERRACAPRIOLA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 2 - San Severo/Torremaggiore/Apricena",
+    "district_code": "DSS-FG-02"
+  },
+  {
+    "comune": "Sogliano Cavour",
+    "comune_key": "SOGLIANO CAVOUR",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Sogliano Cavour",
+    "district_code": "DSS-LE-SOG"
+  },
+  {
+    "comune": "Soleto",
+    "comune_key": "SOLETO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Soleto",
+    "district_code": "DSS-LE-SOL"
+  },
+  {
+    "comune": "Specchia",
+    "comune_key": "SPECCHIA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Specchia",
+    "district_code": "DSS-LE-SPE"
+  },
+  {
+    "comune": "Spinazzola",
+    "comune_key": "SPINAZZOLA",
+    "provincia": "BT",
+    "asl_name": "ASL BT",
+    "district_name": "Distretto 2 - Andria/Minervino/Spinazzola",
+    "district_code": "DSS-BT-02"
+  },
+  {
+    "comune": "Spongano",
+    "comune_key": "SPONGANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Spongano",
+    "district_code": "DSS-LE-SPO"
+  },
+  {
+    "comune": "Squinzano",
+    "comune_key": "SQUINZANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Campi Salentina",
+    "district_code": "DSS-LE-02"
+  },
+  {
+    "comune": "Statte",
+    "comune_key": "STATTE",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 2 - Massafra/Mottola/Palagiano/Statte",
+    "district_code": "DSS-TA-02"
+  },
+  {
+    "comune": "Sternatia",
+    "comune_key": "STERNATIA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Sternatia",
+    "district_code": "DSS-LE-STE"
+  },
+  {
+    "comune": "Stornara",
+    "comune_key": "STORNARA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 5 - Cerignola e Reali Siti",
+    "district_code": "DSS-FG-05"
+  },
+  {
+    "comune": "Stornarella",
+    "comune_key": "STORNARELLA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 5 - Cerignola e Reali Siti",
+    "district_code": "DSS-FG-05"
+  },
+  {
+    "comune": "Supersano",
+    "comune_key": "SUPERSANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Supersano",
+    "district_code": "DSS-LE-SUP"
+  },
+  {
+    "comune": "Surano",
+    "comune_key": "SURANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Surano",
+    "district_code": "DSS-LE-SUR"
+  },
+  {
+    "comune": "Surbo",
+    "comune_key": "SURBO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Lecce",
+    "district_code": "DSS-LE-01"
+  },
+  {
+    "comune": "Taranto",
+    "comune_key": "TARANTO",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto 1 - Unico di Taranto",
+    "district_code": "DSS-TA-01"
+  },
+  {
+    "comune": "Taurisano",
+    "comune_key": "TAURISANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Casarano",
+    "district_code": "DSS-LE-07"
+  },
+  {
+    "comune": "Taviano",
+    "comune_key": "TAVIANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Ugento",
+    "district_code": "DSS-LE-09"
+  },
+  {
+    "comune": "Terlizzi",
+    "comune_key": "TERLIZZI",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 1 - Corato/Ruvo/Terlizzi",
+    "district_code": "DSS-BA-01"
+  },
+  {
+    "comune": "Tiggiano",
+    "comune_key": "TIGGIANO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Tiggiano",
+    "district_code": "DSS-LE-TIG"
+  },
+  {
+    "comune": "Torchiarolo",
+    "comune_key": "TORCHIAROLO",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 4 - Mesagne/Latiano/San Pietro",
+    "district_code": "DSS-BR-04"
+  },
+  {
+    "comune": "Toritto",
+    "comune_key": "TORITTO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 13 - Grumo Appula/Binetto/Toritto",
+    "district_code": "DSS-BA-13"
+  },
+  {
+    "comune": "Torre Santa Susanna",
+    "comune_key": "TORRE SANTA SUSANNA",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 4 - Mesagne/Latiano/San Pietro",
+    "district_code": "DSS-BR-04"
+  },
+  {
+    "comune": "Torremaggiore",
+    "comune_key": "TORREMAGGIORE",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 2 - San Severo/Torremaggiore/Apricena",
+    "district_code": "DSS-FG-02"
+  },
+  {
+    "comune": "Torricella",
+    "comune_key": "TORRICELLA",
+    "provincia": "TA",
+    "asl_name": "ASL TARANTO",
+    "district_name": "Distretto Socio Sanitario Torricella",
+    "district_code": "DSS-TA-TOR"
+  },
+  {
+    "comune": "Trani",
+    "comune_key": "TRANI",
+    "provincia": "BT",
+    "asl_name": "ASL BT",
+    "district_name": "Distretto 5 - Trani/Bisceglie",
+    "district_code": "DSS-BT-05"
+  },
+  {
+    "comune": "Trepuzzi",
+    "comune_key": "TREPUZZI",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Campi Salentina",
+    "district_code": "DSS-LE-02"
+  },
+  {
+    "comune": "Tricase",
+    "comune_key": "TRICASE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Gagliano/Tricase",
+    "district_code": "DSS-LE-08"
+  },
+  {
+    "comune": "Triggiano",
+    "comune_key": "TRIGGIANO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 6 - Triggiano/Capurso/Valenzano",
+    "district_code": "DSS-BA-06"
+  },
+  {
+    "comune": "Trinitapoli",
+    "comune_key": "TRINITAPOLI",
+    "provincia": "BT",
+    "asl_name": "ASL BT",
+    "district_name": "Distretto 1 - Margherita/S.Ferdinando/Trinitapoli",
+    "district_code": "DSS-BT-01"
+  },
+  {
+    "comune": "Troia",
+    "comune_key": "TROIA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 7 - Subappennino Dauno Sud/Troia",
+    "district_code": "DSS-FG-07"
+  },
+  {
+    "comune": "Tuglie",
+    "comune_key": "TUGLIE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Tuglie",
+    "district_code": "DSS-LE-TUG"
+  },
+  {
+    "comune": "Turi",
+    "comune_key": "TURI",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 10 - Gioia del Colle/Casamassima/Turi",
+    "district_code": "DSS-BA-10"
+  },
+  {
+    "comune": "Ugento",
+    "comune_key": "UGENTO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Ugento",
+    "district_code": "DSS-LE-09"
+  },
+  {
+    "comune": "Uggiano La Chiesa",
+    "comune_key": "UGGIANO LA CHIESA",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Uggiano La Chiesa",
+    "district_code": "DSS-LE-UGG"
+  },
+  {
+    "comune": "Valenzano",
+    "comune_key": "VALENZANO",
+    "provincia": "BA",
+    "asl_name": "ASL BARI",
+    "district_name": "Distretto 6 - Triggiano/Capurso/Valenzano",
+    "district_code": "DSS-BA-06"
+  },
+  {
+    "comune": "Veglie",
+    "comune_key": "VEGLIE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario di Campi Salentina",
+    "district_code": "DSS-LE-02"
+  },
+  {
+    "comune": "Vernole",
+    "comune_key": "VERNOLE",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Vernole",
+    "district_code": "DSS-LE-VER"
+  },
+  {
+    "comune": "Vico Del Gargano",
+    "comune_key": "VICO DEL GARGANO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 4 - Gargano Nord",
+    "district_code": "DSS-FG-04"
+  },
+  {
+    "comune": "Vieste",
+    "comune_key": "VIESTE",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 4 - Gargano Nord",
+    "district_code": "DSS-FG-04"
+  },
+  {
+    "comune": "Villa Castelli",
+    "comune_key": "VILLA CASTELLI",
+    "provincia": "BR",
+    "asl_name": "ASL BRINDISI",
+    "district_name": "Distretto 3 - Francavilla Fontana/Oria/Ceglie",
+    "district_code": "DSS-BR-03"
+  },
+  {
+    "comune": "Volturino",
+    "comune_key": "VOLTURINO",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto Socio Sanitario Volturino",
+    "district_code": "DSS-FG-VOL"
+  },
+  {
+    "comune": "Zapponeta",
+    "comune_key": "ZAPPONETA",
+    "provincia": "FG",
+    "asl_name": "ASL FOGGIA",
+    "district_name": "Distretto 3 - Manfredonia/Monte Sant'Angelo",
+    "district_code": "DSS-FG-03"
+  },
+  {
+    "comune": "Zollino",
+    "comune_key": "ZOLLINO",
+    "provincia": "LE",
+    "asl_name": "ASL LECCE",
+    "district_name": "Distretto Socio Sanitario Zollino",
+    "district_code": "DSS-LE-ZOL"
+  }
+]
