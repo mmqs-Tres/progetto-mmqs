@@ -1,0 +1,27 @@
+{
+  "name": "pharmapuglia-opencare",
+  "version": "0.1.0",
+  "description": "PharmaPuglia OpenCare — MVP per ricerca farmaci equivalenti, farmacie geolocalizzate, distretti ASL Puglia e segnalazioni cittadine.",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node data/seed.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "csv-parse": "^5.6.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "better-sqlite3": "^11.7.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}

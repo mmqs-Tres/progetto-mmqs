@@ -147,3 +147,21 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# SQLite databases
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Temporary uploads
+uploads/
+
+# Coding agents local settings
+.claude/settings.local.json
+
