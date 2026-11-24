@@ -82,7 +82,9 @@ progetto-mmqs/
 ├── data/
 │   ├── raw/                     # [Marco] Dataset puliti Puglia (CSV/JSON)
 │   └── seed.js                  # [Marco] Import/seed iniziale nel DB SQLite
-├── docs/screenshots/            # [PR finale] Screenshot per il README
+├── docs/
+│   ├── lavoro-di-gruppo.md      # [Tutti] Registro vivo di contributi, branch, PR e coding agent usati
+│   └── screenshots/             # [PR finale] Screenshot per il README
 ├── progetto/idee/               # Proposte originali (non modificare)
 ├── src/
 │   ├── app.js                   # Setup Express + mount dei router
@@ -171,6 +173,9 @@ Tutte le risposte API sono in formato JSON. In caso di errore restituiscono `{ "
 
 ### Criterio obbligatorio per ogni Pull Request
 **Nessun push diretto su `main`.** Ogni modifica entra su `main` seguendo rigorosamente questi 3 passaggi:
-1. **Pubblicazione dall'utente:** l'autore pusha il proprio branch su `origin` e apre la Pull Request verso `main` con descrizione chiara delle modifiche e di come testarle.
-2. **Review richiesta agli altri utenti:** l'autore assegna come *Reviewers* gli altri membri del gruppo, che verificano codice, rispetto dei contratti API e assenza di segreti/dati reali.
+1. **Pubblicazione dall'utente:** l'autore aggiorna la propria sezione in `docs/lavoro-di-gruppo.md` (attività svolte, PR, coding agent/modelli/approccio/skill usati), pusha il proprio branch su `origin` e apre la Pull Request verso `main` con descrizione chiara delle modifiche e di come testarle.
+2. **Review richiesta agli altri utenti:** l'autore assegna come *Reviewers* gli altri membri del gruppo, che verificano codice, rispetto dei contratti API, aggiornamento di `docs/lavoro-di-gruppo.md` e assenza di segreti/dati reali.
 3. **Merge dopo la review:** il merge su `main` avviene **solo dopo l'approvazione** della review.
+
+### Aggiornamento continuo di `docs/lavoro-di-gruppo.md`
+Il file `docs/lavoro-di-gruppo.md` deve essere tenuto costantemente aggiornato ad ogni PR in modo che, al momento della consegna finale, le sezioni **"Sviluppo con i coding agent"** e **"Lavoro di gruppo"** del `README.md` siano già pronte e verificate. Per evitare conflitti di merge, ogni membro modifica esclusivamente la propria sottosezione e la riga del proprio branch.

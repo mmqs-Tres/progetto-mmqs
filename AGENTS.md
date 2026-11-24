@@ -21,6 +21,7 @@ Prima di modificare o creare file, leggi sempre [`decisioni.md`](./decisioni.md)
 - **Sicurezza e segreti:** mai hardcodare password, API key o `JWT_SECRET`. Leggere sempre da `process.env` e documentare eventuali nuove chiavi in `.env.example` (senza valori reali).
 - **Dati di prova:** usare solo dati e utenti inventati (es. dominio `.test`), mai dati personali reali.
 - **Perimetro del branch:** modificare solo i file assegnati al proprio branch come indicato in `decisioni.md` per evitare conflitti di merge.
+- **Tracciamento lavoro di gruppo:** prima di aprire ogni PR, aggiornare la propria sottosezione in `docs/lavoro-di-gruppo.md` (attività svolte, PR, agent/modelli/approccio/skill usati) senza modificare le sezioni degli altri membri.
 - **Workflow PR:** non fare mai push diretto su `main`; lavorare sempre su branch dedicati e aprire una PR richiedendo review agli altri membri.
 
 ## 4. Comandi utili
