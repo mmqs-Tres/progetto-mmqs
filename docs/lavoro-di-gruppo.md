@@ -15,15 +15,15 @@ Verrà utilizzato come fonte diretta per compilare le sezioni **7 (Sviluppo con 
 | PR #5 | `feat/auth-and-reports` | Gabriele (`Fariguu`) | Marco, Jennifer | Mergiata | Autenticazione RBAC (`cittadino`/`admin`), CRUD segnalazioni con interfaccia e test API |
 | PR #6 | `feat/search-map-ui` | Jennifer (`jenniferdibenedetto`) | Gabriele, Marco | Mergiata | Ricerca farmaci e matching equivalenti AIFA, inquadramento Comune → ASL/Distretto, mappa Leaflet/Nominatim e UI |
 | PR #7 | `feat/data-ingestion-admin` | Marco (`DarkFury17`) | Gabriele, Jennifer | Mergiata | Dataset ufficiali Puglia, seed DB, upload CSV/JSON Admin e pannello moderazione segnalazioni |
-| PR #8 | `fix/integration-polish` | Gruppo | Tutti | Aperta / In review | Integrazione finale, fix post-merge e verifica end-to-end |
-| *(da aprire)* | `docs/readme-and-screenshots` | Gruppo | Tutti | In preparazione | Screenshot finali e stesura completa del `README.md` di consegna |
+| PR #8 | `fix/integration-polish` | Gabriele (`Fariguu`) | Marco | Mergiata (approvata da Marco) | Integrazione finale, fix post-merge e verifica end-to-end |
+| [PR #9](https://github.com/mmqs-Tres/progetto-mmqs/pull/9) | `docs/readme-and-screenshots` | Gabriele (`Fariguu`) | Marco, Jennifer | Aperta, in attesa di review | Screenshot finali, stesura completa del `README.md` di consegna e review UX/UI in `review-ux/` |
 
 ---
 
 ## 2. Contributi per membro
 
 ### Farigu Gabriele Vitocosmo (`Fariguu`)
-- **Branch principali:** `chore/project-setup`, `feat/auth-and-reports`, `fix/integration-polish`
+- **Branch principali:** `chore/project-setup`, `feat/auth-and-reports`, `fix/integration-polish`, `docs/readme-and-screenshots`
 - **Attività svolte:**
   - Setup architetturale del repository (`package.json`, `.gitignore`, `.env.example`, `src/app.js`, `src/server.js`, `src/db/schema.sql`, `src/db/database.js`, `src/middleware/auth.js`, shell `public/`).
   - Redazione di `decisioni.md`, `AGENTS.md` e `docs/lavoro-di-gruppo.md`.
@@ -34,10 +34,12 @@ Verrà utilizzato come fonte diretta per compilare le sezioni **7 (Sviluppo con 
   - Aggiornamento di `decisioni.md`, `AGENTS.md` e `.env.example` con le regole su autenticazione e segnalazioni.
   - Integrazione (`fix/integration-polish`): stile uniforme di form e Area Admin, layout responsive, schede farmaco e mappa utilizzabili con i dati reali.
   - Correzioni (`fix/integration-polish`): login unico, password di prova spostate in `.env`, rimozione dei dati d'esempio, ricerca senza accenti, CSP, messaggi di errore e 16 test di integrazione.
+  - Documentazione (`docs/readme-and-screenshots`): README di consegna, screenshot e prova completa su un clone pulito.
+  - Review UX/UI dell'app (`review-ux/`, sullo stesso branch `docs/readme-and-screenshots`): prove nell'app in esecuzione a 1280 e 375 px su otto flussi, analisi con quattro agenti in parallelo, verifica indipendente di ogni P0 e P1 e sintesi finale in `review-ux/REPORT.md`. Esito: decisione HOLD, 8 P1 confermati, nessun P0 confermato. Il report è il testo prodotto dall'agente di sintesi, copiato dall'orchestratore in `review-ux/REPORT.md` perché il sistema ha rifiutato la scrittura da parte del subagent; in testa c'è una nota di salvataggio.
 - **Coding agent, modelli, approccio e skill usati:**
-  - **Agent & Modello:** Antigravity (Gemini) per `chore/project-setup`; Claude Code (Claude Opus 5.5) per `feat/auth-and-reports` e `fix/integration-polish`
-  - **Approccio:** Planning guidato con domande preliminari + esecuzione passo-passo verificata con test (`chore/project-setup`); Plan Mode con analisi delle falle e piano approvato prima dello sviluppo (`feat/auth-and-reports`); verifica del `main` integrato, poi correzioni con test e prove nel browser (`fix/integration-polish`)
-  - **Skill usate:** `built-in-browser` (inclusa in Claude Code desktop, di Anthropic) per la verifica nel browser di `feat/auth-and-reports` e `fix/integration-polish`; *(da annotare eventuali skill usate in `chore/project-setup`)*
+  - **Agent & Modello:** Antigravity (Gemini) per `chore/project-setup`; Claude Code (Claude Opus 5.5) per `feat/auth-and-reports`, `fix/integration-polish` e `docs/readme-and-screenshots`; Claude Code (Claude Haiku 5.5) come orchestratore della review UX/UI e i sette subagent specializzati su Haiku (Evidence Collector, UX Researcher, Persona Walkthrough Specialist, UI Designer, Accessibility Auditor, Reality Checker, UI Finish-Gate Reviewer)
+  - **Approccio:** Planning guidato con domande preliminari + esecuzione passo-passo verificata con test (`chore/project-setup`); Plan Mode con analisi delle falle e piano approvato prima dello sviluppo (`feat/auth-and-reports`); verifica del `main` integrato, poi correzioni con test e prove nel browser (`fix/integration-polish`); review UX/UI in fasi (prove, analisi, verifica, sintesi) con un solo agente per le prove e subagent per l'analisi in parallelo, file di output separati e verifica delle citazioni prima della consegna
+  - **Skill usate:** `built-in-browser` (inclusa in Claude Code desktop, di Anthropic) per la verifica nel browser di `feat/auth-and-reports` e `fix/integration-polish`; per la review UX/UI nessuna skill aggiuntiva (prove eseguite con Chrome di sistema via `playwright-core`); *(da annotare eventuali skill usate in `chore/project-setup`)*
 
 ---
 
