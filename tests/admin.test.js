@@ -4,7 +4,7 @@ const request = require('supertest');
 const jwt = require('jsonwebtoken');
 
 process.env.DB_PATH = ':memory:';
-process.env.JWT_SECRET = 'test-secret-only';
+process.env.JWT_SECRET = 'test-secret-only-not-for-production-use';
 
 const { initDatabase, closeDb } = require('../src/db/database');
 const app = require('../src/app');
